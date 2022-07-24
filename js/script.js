@@ -1,28 +1,28 @@
 var selectors = document.getElementsByClassName("form-check-input");
-var hyphen = document.getElementById("hyphen-container");
-var gloss = document.getElementById("gloss-container");
-var eng = document.getElementById("english-transcript-container");
-var hyphenOn= false;
-var glossOn= false;
-var engOn= false;
+var hyphen = document.getElementsByClassName("hyphen-container");
+var gloss = document.getElementsByClassName("gloss-container");
+var eng = document.getElementsByClassName("english-transcript-container");
+var time = document.getElementsByClassName("ti-time");
 selectors[0].addEventListener('click', function(){
-    hyphenOn=change(hyphen, hyphenOn);
+    change(hyphen);
 });
 selectors[1].addEventListener('click', function(){
-    glossOn=change(gloss, glossOn);
+    change(gloss);
 });
 selectors[2].addEventListener('click', function(){
-    engOn=change(eng, engOn);
+    change(eng);
+});
+selectors[3].addEventListener('click', function(){
+    change(time);
 });
 
-function change(cur, bol){
-    if (bol){
-        cur.style.display = 'none';
-        return false;
+function change(cur){
+  for(let i=0; i<cur.length; i++){
+    if (cur[i].style.display === "table-row"){
+        cur[i].style.display = 'none';
     }
     else{
-        cur.style.display = 'block';
-        return true;
+        cur[i].style.display = 'table-row';
     }
+  }
 }
-
