@@ -193,7 +193,7 @@ body::-webkit-scrollbar-thumb:hover {
 .card::before {
   background: radial-gradient(
     800px circle at var(--mouse-x) var(--mouse-y),
-    rgba(0,184,253, 0.1),
+    rgba(0,184,253, 0.2),
     transparent 40%
   );
   z-index: 3;
@@ -202,7 +202,7 @@ body::-webkit-scrollbar-thumb:hover {
 .card::after {
   background: radial-gradient(
     600px circle at var(--mouse-x) var(--mouse-y),
-    rgba(0,184,253, 0.6),
+    rgba(0,184,253, 0.9),
     transparent 40%
   );
   z-index: 1;
