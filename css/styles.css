@@ -401,6 +401,8 @@ div>p{
   display:flex;
   margin-bottom: 8px;
   line-height:18px;
+  transform: scale(1);
+  transition: .6s ease opacity,.6s ease transform;
 }
 .elementTitle{
   display:flex;

@@ -82,9 +82,17 @@ function change(cur){
   for(let i=0; i<cur.length; i++){
     if (cur[i].style.display === 'none'){
         cur[i].style.display = 'flex';
+        window.setTimeout(function(){
+            cur[i].style.opacity = 1;
+            cur[i].style.transform = 'scale(1)';
+          },0);
     }
     else{
+        cur[i].style.opacity = 0;
+        cur[i].style.transform = 'scale(0)';
+        window.setTimeout(function(){
         cur[i].style.display = 'none';
+        },700);
     }
   }
 }
