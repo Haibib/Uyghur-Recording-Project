@@ -12,6 +12,7 @@ function loadXMLDoc() {
 
     let title = document.getElementById("title").innerText;
     title = "xml/" + title.replace(/\s/g, '') + ".xml";
+    console.log(title);
     xmlhttp.open("GET", title, true); 
     xmlhttp.send(); 
 } 
