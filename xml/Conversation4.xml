@@ -7,10 +7,10 @@
       <language iso="uig" glottocode="uigh1240">Uyghur, Modern Standard</language>
       <date_created>2021_04_06</date_created>
       <title>Conversation 4</title>
-      <recording>Conversation recorded on participant's iPhone</recording>
+      <recording>Conversation recorded on participant's iPhone (regular compressed audio, not lossless)</recording>
       <context>The participants are at the table in their home, chatting after school.</context>
       <rights>Restricted access: Creators allow academic use.</rights>
-      <sponsors>UCSB Confucius Institute China Studies Award 2021 (Michael Fiddler); UCSB Humanities and Social Sciences Research Grant 2022 (Michael Fiddler)</sponsors>
+      <sponsors>Uyghur Projects Foundation; UCSB Confucius Institute China Studies Award 2021 (Michael Fiddler); UCSB Humanities and Social Sciences Research Grant 2022 (Michael Fiddler)</sponsors>
       <participants>
         <speaker_A>
           <comment>Speaker A wishes for all personal information to remain confidential</comment>
@@ -20,17 +20,15 @@
         </speaker_B>
       </participants>
       <project_creators>
-        <initial_transcription>Kaisar Anvar</initial_transcription>
+        <initial_transcription>Malik Anvar</initial_transcription>
         <annotation>Michael Fiddler</annotation>
         <translation>Michael Fiddler</translation>
-        <supervisor>Matthew K. Gordon</supervisor>
         <web_formatting>Haibibullah Abdul-Kerim</web_formatting>
       </project_creators>
     </metadata>
   </header>
-  <transcript_body/>
   <transcript_body>
-    <cf_final>
+    <c4_final>
       <annotation who="Speaker A" ref="1">
         <timestamp>00:00:01.310-00:00:03.285</timestamp>
         <iu>[bowaqning ismi] néme boldingiz siz balam.</iu>
@@ -40,7 +38,7 @@
       </annotation>
       <annotation who="Speaker A" ref="2">
         <timestamp>00:00:04.410-00:00:06.310</timestamp>
-        <iu>Mijezingiz yoq he balam he...</iu>
+        <iu>Mijezingiz yoq he balam he</iu>
         <seg>mijez-ingiz yoq he bala-m he</seg>
         <gloss>feeling-2SG.POL.POSS not.exist DM child-1SG.POSS DM</gloss>
         <eng>You’re not feeling good, are you, baby?</eng>
@@ -1739,6 +1737,6 @@
         <gloss>blablablablabla</gloss>
         <eng>Blablablablabla….</eng>
       </annotation>
-    </cf_final>
+    </c4_final>
   </transcript_body>
 </c4root>
