@@ -50,15 +50,15 @@ body::-webkit-scrollbar-thumb:hover {
 }
 #brand{
   font-size: 30px;
-  margin: 5px;
-  margin-left: 5px;
-  margin-left: 10px;
   color: #fff;
   float: left;
   margin-left: 15px;
   text-shadow: -1.25px 1.25px #bbb;
   font-weight: 600;
   height: 60px !important;
+  display:flex;
+  align-items: center;
+
 }
 #tot-dropdown{
   width:192.383px !important;
@@ -108,7 +108,6 @@ body::-webkit-scrollbar-thumb:hover {
   margin:10px 0px 20px;
 }
 div>div>p{
-  text-indent: 30px;
   margin:5px 0px 0px;
   display:block;
 }
@@ -439,16 +438,14 @@ div>p{
   flex-wrap: wrap;
 }
 .metadataTitle{
-  width:120px;
+  width:180px;
 }
 .annotations, .metadata{
   display:block;
   margin-bottom:30px;
 }
-.speaker{
-  font-size: 1.2em;
-  font-weight: Bold;
-  margin-bottom: 5px;
+.speaker_A span, .speaker_B span{
+  font-weight:bold;
 }
 #table{
   display:block;
@@ -468,6 +465,18 @@ a{
 .regularLink{
   display:inline-block;
   text-indent: -1px;
+}
+.footerLink{
+  color: #d0f2ff;
+}
+.footerLink:hover{
+  color: #002736;
+}
+p .footerLink{
+  color: #002736;
+}
+p .footerLink:hover{
+  color: #d0f2ff;
 }
 /* End Conversation Page */
 
@@ -534,9 +543,7 @@ a{
 @media (min-width: 573px) and (max-width: 768px) {
   /* Header */
   #brand{
-    margin: auto 5px;
-    font-size: 25px;
-    padding: 10px 15px;
+    font-size: 20px;
   }
   #dropdown{
     float:right;
@@ -582,7 +589,6 @@ a{
   #brand{
     margin: auto 5px;
     font-size: 17px;
-    padding: 20px 15px;
   }
   #drop-menu{
     top:26px;
@@ -605,6 +611,13 @@ a{
   .subheader{
     margin-right:10%;
   }
+  #tot-dropdown, #svg{
+    transform: scale(0.8);
+    width:auto;
+  }
+  #nav-container{
+    padding: 0px 0px 0px 5px;
+  }
 }
 
 
@@ -616,8 +629,7 @@ a{
   }
   #brand{
     margin: auto 5px;
-    font-size: 17px;
-    width:170px;
+    font-size: 3vw;
     padding: 6px;
     padding-right:0px;
     margin-right:0px;
