@@ -364,7 +364,7 @@ h1, h2, h3, h4, span{
 }
 .form-check-label{
   height: 100%;
-  font-size: 2vw;
+  font-size: 15px;
   box-sizing: border-box;
   display: inline-flex;
   align-self: flex-start;
@@ -373,8 +373,8 @@ h1, h2, h3, h4, span{
 }
 .form-check-input{
   margin:0px !important;
-  height:2vw !important;
-  width: 5vw !important;
+  height:15px !important;
+  width: 35px !important;
   box-sizing:border-box;
 }
 #check-holder{
@@ -543,7 +543,7 @@ p .footerLink:hover{
 }
 
 /********** Medium devices only **********/
-@media (max-width: 1199px) {
+@media (max-width: 667px) {
   /* Header */
 
   /* End Header */
