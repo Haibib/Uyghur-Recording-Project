@@ -330,20 +330,40 @@ h1, h2, h3, h4, span{
 /* End Home Page */
 
 /* Conversation Page */
+#intro{
+  padding: 0px;
+  display:flex;
+  flex-wrap: wrap
+}
+#rest-collection{
+  height:200px;
+  padding: 0px 10px;
+  float:left;
+  width:calc((100% - 30vw));
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right:10px;
+}
 #toggle-collection{
   border:2px solid #00b8fd;
-  height:60px;
-  padding:0px;
-  display:flex;
+  height:200px;
+  padding: 0px 10px;
   float:left;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right:10px;
 }
 .hold{
-  margin:auto;
   padding:0px;
   align-content: center;
+  width:100%;
+  height:30px;
+  display:flex;
 }
 .form-check-label{
-  height: 56px;
+  height: 100%;
   font-size: 2vw;
   box-sizing: border-box;
   display: inline-flex;
@@ -358,7 +378,7 @@ h1, h2, h3, h4, span{
   box-sizing:border-box;
 }
 #check-holder{
-  height: 56px;
+  height: 100%;
   display: inline-flex;
   align-items: center;
   overflow:hidden;
@@ -370,8 +390,8 @@ h1, h2, h3, h4, span{
 }
 #audio-container{
   display:flex;
-  margin:10px 25%;
   text-align: center;
+  margin:0px 0px 20px;
 }
 .recording{
   width:100%;
@@ -523,14 +543,17 @@ p .footerLink:hover{
 }
 
 /********** Medium devices only **********/
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (max-width: 1199px) {
   /* Header */
 
   /* End Header */
 
-  /* Home Page */
-
-  /* End Home Page */
+  /* Conversation Page */
+  #rest-collection{
+    width:100%;
+    height:150px;
+  }
+  /* End conversation Page */
 }
 
 /********** Small devices only **********/
@@ -579,8 +602,7 @@ p .footerLink:hover{
 
   /* Home Page */
   #audio-container{
-    margin-left:15%;
-    margin-right:15%;
+    margin:0px 0px 20px;
   }
   /* End Home Page */
 
@@ -605,8 +627,7 @@ p .footerLink:hover{
     width:100%;
   }
   #audio-container{
-    margin-left:10%;
-    margin-right:10%;
+    margin:0px 0px 20px;
   }
   .subheader{
     margin-right:10%;
@@ -662,8 +683,7 @@ p .footerLink:hover{
     width:95vw;
   }
   #audio-container{
-    margin-left:1%;
-    margin-right:1%;
+    margin:0px 0px 20px;
   }
 }
 /* Transcript table styles */
