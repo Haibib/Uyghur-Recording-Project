@@ -231,7 +231,7 @@ div>div>p{
 
 /* -- ↓ ↓ ↓ extra card content styles ↓ ↓ ↓ -- */
 
-h1, h2, h3, h4, span{
+h1, h2, h3, h4{
   color: rgb(20, 20, 20);
   font-family: "Rubik", sans-serif;
   font-weight: 400;
@@ -437,17 +437,10 @@ div>p{
 }
 .metadataSubtitle{
   display:flex;
-  justify-content: center;
+  justify-content: left;
   margin:10px 0px 15px;
   font-size:1.5em;
-}
-.metadataTop,.metadataBottom{
-  display:flex;
-  width: 100%;
-  align-self: stretch;
-  flex-grow: 0;
-  flex-shrink: 0;
-  align-items: center;
+  font-weight:bold;
 }
 .elementTitle, .metadataTitle{
   display:flex;
@@ -457,6 +450,7 @@ div>p{
   flex-shrink: 0;
   align-items: center;
   flex-wrap: wrap;
+  font-family: UYGHUR, "Work Sans", sans-serif;
 }
 .metadataTitle{
   width:180px;
@@ -465,7 +459,7 @@ div>p{
   display:block;
   margin-bottom:30px;
 }
-.speaker_A span, .speaker_B span{
+.speaker_A span, .speaker_B span, .speaker{
   font-weight:bold;
 }
 #table{
