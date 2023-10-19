@@ -88,10 +88,10 @@ var eng = document.getElementsByClassName("eng");
         change(iu);
     });
     selectors[1].addEventListener('click', function(){
-        change(gloss);
+        change(seg);
     });
     selectors[2].addEventListener('click', function(){
-        change(seg);
+        change(gloss);
     });
     selectors[3].addEventListener('click', function(){
         change(eng);
