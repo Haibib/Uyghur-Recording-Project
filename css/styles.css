@@ -333,7 +333,8 @@ h1, h2, h3, h4, span{
 #intro{
   padding: 0px;
   display:flex;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 #rest-collection{
   height:200px;
