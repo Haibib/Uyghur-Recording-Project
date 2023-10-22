@@ -442,14 +442,14 @@ div>p{
   font-size:1.5em;
   font-weight:bold;
 }
-.elementTitle, .metadataTitle{
-  display:flex;
+.elementTitle, .metadataTitle, .space{
+  box-sizing: border-box;
+  display:inline-flex;
   width: 90px;
   align-self: stretch;
   flex-grow: 0;
   flex-shrink: 0;
   align-items: center;
-  flex-wrap: wrap;
   font-family: UYGHUR, "Work Sans", sans-serif;
 }
 .metadataTitle{
@@ -461,6 +461,10 @@ div>p{
 }
 .speaker_A span, .speaker_B span, .speaker{
   font-weight:bold;
+}
+.part{
+  display:inline-flex;
+  margin-right:10px;
 }
 #table{
   display:block;

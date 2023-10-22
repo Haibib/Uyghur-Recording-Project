@@ -20,18 +20,36 @@ function empDetails(xml) {
     var table = '';
     for(let i = 1; i < annotation.length; i++){
         table += `<div class = "annotations"> `;
+        let tempSeg = annotation[i].getElementsByTagName("seg")[0].innerHTML.split(" ");
+        let segString="";
+        let tempGloss = annotation[i].getElementsByTagName("gloss")[0].innerHTML.split(" ");
+        let glossString="";
+        let segCount = 0;
+        let glossCount = 0;
+        for(let d = 0; d<tempSeg.length; d++){
+            if(tempSeg[segCount]=="[speaker"){
+                segCount++;
+                tempSeg[segCount]=tempSeg[segCount-1]+" "+tempSeg[segCount];
+            }
+            if(tempGloss[glossCount]=="[speaker"){
+                glossCount++;
+                tempGloss[glossCount]=tempGloss[glossCount-1]+" "+ tempGloss[glossCount];
+            }
+            segString+='<span class="part segPart'+d+'">'+ tempSeg[segCount]+'</span>';
+            glossString+='<span class="part glossPart'+d+'">'+ tempGloss[glossCount]+'</span>';
+            segCount++;
+            glossCount++;
+        }
         let timestamp = annotation[i].getElementsByTagName("timestamp")[0].innerHTML;
         let iu = annotation[i].getElementsByTagName("iu")[0].innerHTML;
-        let seg = annotation[i].getElementsByTagName("seg")[0].innerHTML;
-        let gloss = annotation[i].getElementsByTagName("gloss")[0].innerHTML;
         let eng = annotation[i].getElementsByTagName("eng")[0].innerHTML;
         if(annotation[i].getAttribute("who")!=annotation[i-1].getAttribute("who")){
             table += '<div class = "speaker">'  + annotation[i].getAttribute("who") + '</div>';
         }
         table += '<div class = "timestamp transcriptElement"><span class="elementTitle">Timestamp</span>' + timestamp + '</div>';
         table += '<div class = "iu transcriptElement"><span class="elementTitle">IU</span>' + iu + '</div>';
-        table += '<div class = "seg transcriptElement"><span class="elementTitle">Seg</span>' + seg + '</div>';
-        table += '<div class = "gloss transcriptElement"><span class="elementTitle">Gloss</span>' + gloss + '</div>';
+        table += '<div class = "seg transcriptElement"><span class="elementTitle">Seg</span>' + segString + '</div>';
+        table += '<div class = "gloss transcriptElement"><span class="elementTitle">Gloss</span>' + glossString + '</div>';
         table += '<div class = "eng transcriptElement"><span class="elementTitle">English</span>' + eng + '</div>';
         table += '</div>'
     }
@@ -66,7 +84,7 @@ function empDetails(xml) {
     document.getElementById("metadata").innerHTML += metadataString;
 }
 document.addEventListener('DOMContentLoaded', function() {
-    let conversationHeader = '<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Uyghur Recording Project </title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"><link rel="stylesheet" href="css/bootstrap-theme.css"><link rel="stylesheet" href="css/styles.css"><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet"><script src = "js/jquery-2.1.4.min.js"> </script></head><body><header><nav id="nav" class="navbar navbar-expand-sm navbar-light"><div id="nav-container" class="container"><a id="brand" class="navbar-brand align-middle" href="English-Home.html">Corpus of Conversational Uyghur</a><ul id="tot-dropdown"class="nav navbar-nav navbar-right"><svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#fff" d="M31.33,23.48a7.06,7.06,0,0,0-4.79,1.87A1.48,1.48,0,0,0,25.6,25s0,0,0,0a8.13,8.13,0,0,1-3.11-.59,12.28,12.28,0,0,0,2.48-6.3h.66a1.5,1.5,0,0,0,0-3H21.34V12.78a1.5,1.5,0,1,0-3,0v2.34H14.08a1.5,1.5,0,0,0,0,3h7.84A9,9,0,0,1,20,22.67a9.32,9.32,0,0,1-1.76-2.93,1.5,1.5,0,1,0-2.82,1,12.38,12.38,0,0,0,2.11,3.63,9.28,9.28,0,0,1-3.42.6h0a1.5,1.5,0,1,0,0,3h0A11.3,11.3,0,0,0,20,26.54,10.42,10.42,0,0,0,24.71,28a7,7,0,0,0-.51,2.63v1.12H13.77a1.5,1.5,0,0,0-1.14.52,1.47,1.47,0,0,0-.34,1.21c0,.1.19,1.23.53,2.82a1,1,0,0,1-1.57,1C8.1,35,4.74,32.2,3.69,30.23A1.82,1.82,0,0,0,3.54,30a4.07,4.07,0,0,1-.74-2.35V11.52A4.13,4.13,0,0,1,6.93,7.39H32.67a4.13,4.13,0,0,1,4.13,4.13v12ZM61.2,30.61V46.7a4,4,0,0,1-.74,2.35,1.17,1.17,0,0,0-.15.27c-1,2-4.41,4.77-7.56,7.09a1,1,0,0,1-1.57-1c.34-1.6.52-2.73.53-2.83a1.49,1.49,0,0,0-1.48-1.73H31.33A4.13,4.13,0,0,1,27.2,46.7V30.61a4.13,4.13,0,0,1,4.13-4.13H57.07A4.13,4.13,0,0,1,61.2,30.61Zm-10.42,14L49.05,40.3l-3.42-8.56h0a1.3,1.3,0,0,0-.08-.17l-.06-.1-.09-.12-.09-.1-.1-.09-.13-.1L45,31l-.16-.09h0a.38.38,0,0,0-.1,0l-.16-.05-.15,0h-.3l-.13,0-.17.05a.38.38,0,0,0-.1,0h0l-.15.09-.11.05-.12.1-.1.09-.09.1-.1.12s0,.07-.05.1l-.09.17h0L39.42,40.3l-1.73,4.32a1.51,1.51,0,0,0,.84,2,1.55,1.55,0,0,0,.56.11,1.51,1.51,0,0,0,1.39-1l1.34-3.35h4.84L48,45.73a1.49,1.49,0,0,0,1.39,1,1.54,1.54,0,0,0,.55-.11A1.5,1.5,0,0,0,50.78,44.62ZM43,39.38h2.44l-1.22-3Z"/></svg><button id="dropdown"type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20"> Language </button><ul id="drop-menu" class="dropdown-menu" aria-labelledby="dropdownMenuOffset"><li><a class="dropdown-item" href="English-Home.html">English</a></li><li><a class="dropdown-item" href="#">Uyghur</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item" href="#">Coming Soon</a></li></ul></ul></div></div></nav></header>';
+    let conversationHeader = '<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Uyghur Recording Project </title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"><link rel="stylesheet" href="css/styles.css"><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet"><script src = "js/jquery-2.1.4.min.js"> </script></head><body><header><nav id="nav" class="navbar navbar-expand-sm navbar-light"><div id="nav-container" class="container"><a id="brand" class="navbar-brand align-middle" href="English-Home.html">Corpus of Conversational Uyghur</a><ul id="tot-dropdown"class="nav navbar-nav navbar-right"><svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#fff" d="M31.33,23.48a7.06,7.06,0,0,0-4.79,1.87A1.48,1.48,0,0,0,25.6,25s0,0,0,0a8.13,8.13,0,0,1-3.11-.59,12.28,12.28,0,0,0,2.48-6.3h.66a1.5,1.5,0,0,0,0-3H21.34V12.78a1.5,1.5,0,1,0-3,0v2.34H14.08a1.5,1.5,0,0,0,0,3h7.84A9,9,0,0,1,20,22.67a9.32,9.32,0,0,1-1.76-2.93,1.5,1.5,0,1,0-2.82,1,12.38,12.38,0,0,0,2.11,3.63,9.28,9.28,0,0,1-3.42.6h0a1.5,1.5,0,1,0,0,3h0A11.3,11.3,0,0,0,20,26.54,10.42,10.42,0,0,0,24.71,28a7,7,0,0,0-.51,2.63v1.12H13.77a1.5,1.5,0,0,0-1.14.52,1.47,1.47,0,0,0-.34,1.21c0,.1.19,1.23.53,2.82a1,1,0,0,1-1.57,1C8.1,35,4.74,32.2,3.69,30.23A1.82,1.82,0,0,0,3.54,30a4.07,4.07,0,0,1-.74-2.35V11.52A4.13,4.13,0,0,1,6.93,7.39H32.67a4.13,4.13,0,0,1,4.13,4.13v12ZM61.2,30.61V46.7a4,4,0,0,1-.74,2.35,1.17,1.17,0,0,0-.15.27c-1,2-4.41,4.77-7.56,7.09a1,1,0,0,1-1.57-1c.34-1.6.52-2.73.53-2.83a1.49,1.49,0,0,0-1.48-1.73H31.33A4.13,4.13,0,0,1,27.2,46.7V30.61a4.13,4.13,0,0,1,4.13-4.13H57.07A4.13,4.13,0,0,1,61.2,30.61Zm-10.42,14L49.05,40.3l-3.42-8.56h0a1.3,1.3,0,0,0-.08-.17l-.06-.1-.09-.12-.09-.1-.1-.09-.13-.1L45,31l-.16-.09h0a.38.38,0,0,0-.1,0l-.16-.05-.15,0h-.3l-.13,0-.17.05a.38.38,0,0,0-.1,0h0l-.15.09-.11.05-.12.1-.1.09-.09.1-.1.12s0,.07-.05.1l-.09.17h0L39.42,40.3l-1.73,4.32a1.51,1.51,0,0,0,.84,2,1.55,1.55,0,0,0,.56.11,1.51,1.51,0,0,0,1.39-1l1.34-3.35h4.84L48,45.73a1.49,1.49,0,0,0,1.39,1,1.54,1.54,0,0,0,.55-.11A1.5,1.5,0,0,0,50.78,44.62ZM43,39.38h2.44l-1.22-3Z"/></svg><button id="dropdown"type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20"> Language </button><ul id="drop-menu" class="dropdown-menu" aria-labelledby="dropdownMenuOffset"><li><a class="dropdown-item" href="English-Home.html">English</a></li><li><a class="dropdown-item" href="#">Uyghur</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item" href="#">Coming Soon</a></li></ul></ul></div></div></nav></header>';
     let conversationBody = '<div id="main-content" class="container"> <div id="container" class="container"> <div id="homepage-container" class="row"> <h1 class="title text-center"> Conversation </h1> <div id="intro"> <ul id="toggle-collection"> <li style = "justify-content: center;" class="hold">Select Tiers to Display</li> <li class="hold form-check form-switch"> <div id="check-holder"> <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked></input> </div> <label class="form-check-label" for="flexSwitchCheckDefault">Intonation Unit </label> </li> <li class="hold form-check form-switch"> <div id="check-holder"> <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked> </div> <label class="form-check-label" for="flexSwitchCheckDefault">Segmented Text </label> </li> <li class="hold form-check form-switch"> <div id="check-holder"> <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked> </div> <label class="form-check-label" for="flexSwitchCheckDefault">Gloss </label> </li> <li class="hold form-check form-switch"> <div id="check-holder"> <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked> </div> <label class="form-check-label" for="flexSwitchCheckDefault">English Translation </label> </li> </ul> <div id="rest-collection"> <div id="audio-container"> <audio class="recording" src="" controls="true"></audio> </div> <a class="scroll" href="#metadata"> Scroll to bottom for metadata </a> </div> </div> <div id="conversation-page-container" class="container"> <div id = "table"> </div> <a class="scroll" href="#audio-container"> Scroll to top </a> <div id="metadata"> <div class="title text-center"> Metadata </div> </div> </div> </div> </div> </div>';
     let html = document.querySelector("html");
     html.innerHTML = conversationHeader + conversationBody + html.innerHTML;
@@ -116,3 +134,22 @@ function change(cur){
     }
   }
 }
+
+document.addEventListener("DOMContentLoaded", function(e) { 
+    setTimeout(() => {
+        let a = 1;
+        let max = 0;
+        let segParts = document.getElementsByClassName("segPart0");
+        let glossParts = document.getElementsByClassName("glossPart0");
+        while(!(segParts.length == 0) & a<100){
+            for(let c = 0; c<Math.min(segParts.length, glossParts.length); c++){
+                max = Math.max(segParts[c].offsetWidth, glossParts[c].offsetWidth)+10;
+                segParts[c].style.width=max+"px";
+                glossParts[c].style.width=max+"px";
+            }
+            segParts = document.getElementsByClassName("segPart"+a);
+            glossParts = document.getElementsByClassName("glossPart"+a);
+            a++;
+        }  
+    }, 50);
+});
