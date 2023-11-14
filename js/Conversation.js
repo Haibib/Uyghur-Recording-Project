@@ -135,21 +135,19 @@ function change(cur){
   }
 }
 
-document.addEventListener("DOMContentLoaded", function(e) { 
+window.addEventListener("load", function(e) { 
     setTimeout(() => {
-        let a = 1;
         let max = 0;
-        let segParts = document.getElementsByClassName("segPart0");
-        let glossParts = document.getElementsByClassName("glossPart0");
-        while(!(segParts.length == 0) & a<100){
-            for(let c = 0; c<Math.min(segParts.length, glossParts.length); c++){
-                max = Math.max(segParts[c].offsetWidth, glossParts[c].offsetWidth)+10;
-                segParts[c].style.width=max+"px";
-                glossParts[c].style.width=max+"px";
+        let segParts = document.getElementsByClassName("seg");
+        let glossParts = document.getElementsByClassName("gloss");
+        for(let c = 0; c<Math.min(segParts.length, glossParts.length); c++){
+            let segLine = segParts[c].childNodes;
+            let glossLine = glossParts[c].childNodes;
+            for(let d = 1; d<Math.min(segLine.length, glossLine.length); d++){
+                max = Math.max(segLine[d].offsetWidth, glossLine[d].offsetWidth)+10;
+                segLine[d].style.width=max+"px";
+                glossLine[d].style.width=max+"px";
             }
-            segParts = document.getElementsByClassName("segPart"+a);
-            glossParts = document.getElementsByClassName("glossPart"+a);
-            a++;
-        }  
-    }, 50);
+        }
+    }, 1);
 });
