@@ -481,6 +481,12 @@ div>p{
   align-items: center;
   font-family: UYGHUR, "Work Sans", sans-serif;
 }
+#timeButton{
+  border-width:0px;
+  background-color:#fff;
+  padding:0px;
+  text-decoration: underline;
+}
 .metadataTitle{
   width:180px;
 }
