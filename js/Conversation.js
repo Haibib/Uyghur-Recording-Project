@@ -136,13 +136,13 @@ function change(cur){
   }
 }
 function setAudioTime(elem){
-    let time = elem.parentNode.parentNode.childNodes[1].nodeValue.split("-")[0];
+    let time = elem.parentNode.parentNode.childNodes[1].nodeValue.split("-")[0].substring(3);
     let audio = document.getElementById("audio-container").childNodes[1];
+    console.log(audio.currentTime);
     if (audio.src.length > audioTagLength){
         audio.src = audio.src.substring(0, audio.src.length - time.length-3);
     }
     audio.src += "#t="+time;
-    console.log(audio.src);
 }
 
 window.addEventListener("load", function(e) { 
