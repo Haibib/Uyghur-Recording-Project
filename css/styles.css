@@ -348,6 +348,7 @@ h1, h2, h3, h4{
   flex-direction: column;
   justify-content: flex-end;
   margin-right:10px;
+  background-color:#fff;
 }
 #toggle-collection{
   border:2px solid #00b8fd;
@@ -410,9 +411,10 @@ h1, h2, h3, h4{
 #rest-collection{
   pointer-events: initial;
   position: sticky;
-  top: -6vh;
+  top: -7vh;
   z-index: 100;
-  justify-content:center;
+  justify-content:flex-end;
+  height:160px;
 }
 #conversation-page-container{
   margin-top:200px;
