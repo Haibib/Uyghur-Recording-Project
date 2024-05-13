@@ -2,18 +2,20 @@ import(/* webpackChunkName: "od-survey" */ "./ol_od_survey.js").then(_ => select
 function loadXMLDoc() { 
     var xmlhttp = new XMLHttpRequest(); 
     xmlhttp.onreadystatechange = function () { 
-
         // Request finished and response  
         // is ready and Status is "OK" 
-        if (this.readyState == 4 && this.status == 200) { 
-            empDetails(this); 
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) { 
+            empDetails(xmlhttp); 
         } 
     };
     title = "xml/" + conversation.replace(/\s/g, '') + ".xml";
     xmlhttp.open("GET", title, true); 
     xmlhttp.send(); 
-} 
+}
+let volumeNum = 0;
 let audioTagLength = 0;
+let audio = new Audio("audio/"+conversation.replace(/\s/g, '')+".mp3");
+audio.pause();
 function empDetails(xml) { 
     var xmlDoc = xml.responseXML; 
     var annotation = xmlDoc.getElementsByTagName("annotation");
@@ -84,12 +86,13 @@ function empDetails(xml) {
     document.getElementById("metadata").innerHTML += metadataString;
 }
 document.addEventListener('DOMContentLoaded', function() {
-    let conversationHeader = '<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Corpus of Conversationl Uyghur</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"><link rel="stylesheet" href="css/styles.css"><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet"><script src = "js/jquery-2.1.4.min.js"> </script></head><body><header><nav id="nav" class="navbar navbar-expand-sm navbar-light"><div id="nav-container" class="container"><a id="brand" class="navbar-brand align-middle" href="English-Home.html">Corpus of Conversational Uyghur</a><ul id="tot-dropdown"class="nav navbar-nav navbar-right"><svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#fff" d="M31.33,23.48a7.06,7.06,0,0,0-4.79,1.87A1.48,1.48,0,0,0,25.6,25s0,0,0,0a8.13,8.13,0,0,1-3.11-.59,12.28,12.28,0,0,0,2.48-6.3h.66a1.5,1.5,0,0,0,0-3H21.34V12.78a1.5,1.5,0,1,0-3,0v2.34H14.08a1.5,1.5,0,0,0,0,3h7.84A9,9,0,0,1,20,22.67a9.32,9.32,0,0,1-1.76-2.93,1.5,1.5,0,1,0-2.82,1,12.38,12.38,0,0,0,2.11,3.63,9.28,9.28,0,0,1-3.42.6h0a1.5,1.5,0,1,0,0,3h0A11.3,11.3,0,0,0,20,26.54,10.42,10.42,0,0,0,24.71,28a7,7,0,0,0-.51,2.63v1.12H13.77a1.5,1.5,0,0,0-1.14.52,1.47,1.47,0,0,0-.34,1.21c0,.1.19,1.23.53,2.82a1,1,0,0,1-1.57,1C8.1,35,4.74,32.2,3.69,30.23A1.82,1.82,0,0,0,3.54,30a4.07,4.07,0,0,1-.74-2.35V11.52A4.13,4.13,0,0,1,6.93,7.39H32.67a4.13,4.13,0,0,1,4.13,4.13v12ZM61.2,30.61V46.7a4,4,0,0,1-.74,2.35,1.17,1.17,0,0,0-.15.27c-1,2-4.41,4.77-7.56,7.09a1,1,0,0,1-1.57-1c.34-1.6.52-2.73.53-2.83a1.49,1.49,0,0,0-1.48-1.73H31.33A4.13,4.13,0,0,1,27.2,46.7V30.61a4.13,4.13,0,0,1,4.13-4.13H57.07A4.13,4.13,0,0,1,61.2,30.61Zm-10.42,14L49.05,40.3l-3.42-8.56h0a1.3,1.3,0,0,0-.08-.17l-.06-.1-.09-.12-.09-.1-.1-.09-.13-.1L45,31l-.16-.09h0a.38.38,0,0,0-.1,0l-.16-.05-.15,0h-.3l-.13,0-.17.05a.38.38,0,0,0-.1,0h0l-.15.09-.11.05-.12.1-.1.09-.09.1-.1.12s0,.07-.05.1l-.09.17h0L39.42,40.3l-1.73,4.32a1.51,1.51,0,0,0,.84,2,1.55,1.55,0,0,0,.56.11,1.51,1.51,0,0,0,1.39-1l1.34-3.35h4.84L48,45.73a1.49,1.49,0,0,0,1.39,1,1.54,1.54,0,0,0,.55-.11A1.5,1.5,0,0,0,50.78,44.62ZM43,39.38h2.44l-1.22-3Z"/></svg><button id="dropdown"type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20"> Language </button><ul id="drop-menu" class="dropdown-menu" aria-labelledby="dropdownMenuOffset"><li><a class="dropdown-item" href="English-Home.html">English</a></li><li><a class="dropdown-item" href="#">Uyghur</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item" href="#">Coming Soon</a></li></ul></ul></div></div></nav></header>';
-    let conversationBody = '<div id="main-content" class="container"> <div id="container" class="container"> <div id="homepage-container" class="row"> <h1 id = "top" class="title text-center"> Conversation </h1> <div id="intro"> <ul id="toggle-collection"> <li style = "justify-content: center;" class="hold">Select Tiers to Display</li> <li class="hold form-check form-switch"> <div id="check-holder"> <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked></input> </div> <label class="form-check-label" for="flexSwitchCheckDefault">Intonation Unit </label> </li> <li class="hold form-check form-switch"> <div id="check-holder"> <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked> </div> <label class="form-check-label" for="flexSwitchCheckDefault">Segmented Text </label> </li> <li class="hold form-check form-switch"> <div id="check-holder"> <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked> </div> <label class="form-check-label" for="flexSwitchCheckDefault">Gloss </label> </li> <li class="hold form-check form-switch"> <div id="check-holder"> <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked> </div> <label class="form-check-label" for="flexSwitchCheckDefault">English Translation </label> </li> </ul> <div id="rest-collection"> <div id="audio-container"> <audio class="recording" preload="metadata" controls></audio> </div> <a class="scroll" href="#metadata"> Scroll to bottom for metadata </a> </div> </div> <div id="conversation-page-container" class="container"> <div id = "table"> </div> <a class="scroll" href="#top"> Scroll to top </a> <div id="metadata"> <div class="title text-center"> Metadata </div> </div> </div> </div> </div> </div>';
+    let conversationHeader = '<head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Corpus of Conversationl Uyghur</title><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"><link rel="stylesheet" href="css/styles.css"><link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet"><script src = "js/jquery-2.1.4.min.js"> </script></head><body><header><nav id="nav" class="navbar navbar-expand-sm navbar-light"><div id="nav-container" class="container"><a id="brand" class="navbar-brand align-middle" href="English-Home.html">Corpus of Conversational Uyghur</a><ul id="tot-dropdown"class="nav navbar-nav navbar-right"><svg id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><path fill="#fff" d="M31.33,23.48a7.06,7.06,0,0,0-4.79,1.87A1.48,1.48,0,0,0,25.6,25s0,0,0,0a8.13,8.13,0,0,1-3.11-.59,12.28,12.28,0,0,0,2.48-6.3h.66a1.5,1.5,0,0,0,0-3H21.34V12.78a1.5,1.5,0,1,0-3,0v2.34H14.08a1.5,1.5,0,0,0,0,3h7.84A9,9,0,0,1,20,22.67a9.32,9.32,0,0,1-1.76-2.93,1.5,1.5,0,1,0-2.82,1,12.38,12.38,0,0,0,2.11,3.63,9.28,9.28,0,0,1-3.42.6h0a1.5,1.5,0,1,0,0,3h0A11.3,11.3,0,0,0,20,26.54,10.42,10.42,0,0,0,24.71,28a7,7,0,0,0-.51,2.63v1.12H13.77a1.5,1.5,0,0,0-1.14.52,1.47,1.47,0,0,0-.34,1.21c0,.1.19,1.23.53,2.82a1,1,0,0,1-1.57,1C8.1,35,4.74,32.2,3.69,30.23A1.82,1.82,0,0,0,3.54,30a4.07,4.07,0,0,1-.74-2.35V11.52A4.13,4.13,0,0,1,6.93,7.39H32.67a4.13,4.13,0,0,1,4.13,4.13v12ZM61.2,30.61V46.7a4,4,0,0,1-.74,2.35,1.17,1.17,0,0,0-.15.27c-1,2-4.41,4.77-7.56,7.09a1,1,0,0,1-1.57-1c.34-1.6.52-2.73.53-2.83a1.49,1.49,0,0,0-1.48-1.73H31.33A4.13,4.13,0,0,1,27.2,46.7V30.61a4.13,4.13,0,0,1,4.13-4.13H57.07A4.13,4.13,0,0,1,61.2,30.61Zm-10.42,14L49.05,40.3l-3.42-8.56h0a1.3,1.3,0,0,0-.08-.17l-.06-.1-.09-.12-.09-.1-.1-.09-.13-.1L45,31l-.16-.09h0a.38.38,0,0,0-.1,0l-.16-.05-.15,0h-.3l-.13,0-.17.05a.38.38,0,0,0-.1,0h0l-.15.09-.11.05-.12.1-.1.09-.09.1-.1.12s0,.07-.05.1l-.09.17h0L39.42,40.3l-1.73,4.32a1.51,1.51,0,0,0,.84,2,1.55,1.55,0,0,0,.56.11,1.51,1.51,0,0,0,1.39-1l1.34-3.35h4.84L48,45.73a1.49,1.49,0,0,0,1.39,1,1.54,1.54,0,0,0,.55-.11A1.5,1.5,0,0,0,50.78,44.62ZM43,39.38h2.44l-1.22-3Z"/></svg>'+
+    '<button id="dropdown"type="button" class="btn btn-secondary dropdown-toggle" id="dropdownMenuOffset" data-bs-toggle="dropdown" aria-expanded="false" data-bs-offset="10,20"> Language </button><ul id="drop-menu" class="dropdown-menu" aria-labelledby="dropdownMenuOffset"><li><a class="dropdown-item" href="English-Home.html">English</a></li><li><a class="dropdown-item" href="#">Uyghur</a></li><li><hr class="dropdown-divider"></li><li><a class="dropdown-item" href="#">Coming Soon</a></li></ul></ul></div></div></nav></header>';
+    let conversationBody = '<div id="main-content" class="container"> <div id="container" class="container"> <div id="homepage-container" class="row"> <h1 id = "top" class="title text-center"> Conversation </h1> <div id="intro"> <ul id="toggle-collection"> <li style = "justify-content: center;" class="hold">Select Tiers to Display</li> <li class="hold form-check form-switch"> <div id="check-holder"> <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked></input> </div> <label class="form-check-label" for="flexSwitchCheckDefault">Intonation Unit </label> </li> <li class="hold form-check form-switch"> <div id="check-holder"> <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked> </div> <label class="form-check-label" for="flexSwitchCheckDefault">Segmented Text </label> </li> <li class="hold form-check form-switch"> <div id="check-holder"> <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked> </div> <label class="form-check-label" for="flexSwitchCheckDefault">Gloss </label> </li> <li class="hold form-check form-switch"> <div id="check-holder"> <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked> </div> <label class="form-check-label" for="flexSwitchCheckDefault">English Translation </label> </li> </ul> <div id="rest-collection"> <div id="audio-container"><div class="recording"><button id="playButton" onclick="togglePlayback()"></button><p id=audiotime>'+
+    '00:00/00:00</p><input type="range" id="playbar" name="playbar" min="0" max="1" value="0" step="0.01" class="playbar"><div id="volumediv"><label id="volumelbl" for="volume"><img class = "smallimage" src="images/VolumeOn.svg"</img></label><input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="0.5" class="volumebar"></input></div><div id="speeddiv"><label for="speed"><img class = "smallimage" src="images/Pb-speed.svg"</img></label><select id="speed" name="speed"><option value="0.25"> 0.25</option><option value="0.5"> 0.5</option><option value="0.75"> 0.75</option><option value="1"selected> 1</option><option value="1.25"> 1.25</option><option value="1.5"> 1.5</option><option value="1.75"> 1.75</option><option value="2"> 2</option></select></div></div></div> <a class="scroll" href="#metadata"> Scroll to bottom for metadata </a> </div> </div> <div id="conversation-page-container" class="container"> <div id = "table"> </div> <a class="scroll" href="#top"> Scroll to top </a> <div id="metadata"> <div class="title text-center"> Metadata </div> </div> </div> </div> </div> </div>';
     let html = document.querySelector("html");
     html.innerHTML = conversationHeader + conversationBody + html.innerHTML;
-    this.getElementsByClassName("recording")[0].src = "audio/"+conversation.replace(/\s/g, '')+".mp3";
-    audioTagLength = this.getElementsByClassName("recording")[0].src.length;
+    audioTagLength = audio.src.length;
     document.getElementsByClassName("title")[0].innerText= conversation;
     let conversationFooter = '<div class="container"> <div class="row"> <section id="contact" class="text-center"> <span>Contact: </span> <br> Email - <a class="footerLink" href="mfiddler@ucsb.edu">mfiddler@ucsb.edu</a> <br> Web design - Haibibullah Abdul-Kerim <p>*Project organized by Michael Fiddler, in collaboration with the <a class="footerLink" href="https://uyghursfoundation.org/en/">Uyghur Projects Foundation</a></p> <hr class="visible-xs text-center"> </section> </div> <div class="text-center">© Copyright Michael Fiddler 2022 </div> </div>';
     let footer = document.querySelector("footer");
@@ -115,16 +118,48 @@ var eng = document.getElementsByClassName("eng");
     selectors[3].addEventListener('click', function(){
         change(eng);
     });
+    const volumeControl = document.getElementById('volume');
+    volumeControl.style.background = "linear-gradient(to right, #777 0%, #000 " + Math.round(volumeControl.value * 100).toString() +"%, #fff " + Math.round(volumeControl.value * 100).toString() +"%, #fff 100%)";
+    const speedControl = document.getElementById('speed');
+    const playbar = document.getElementById('playbar');
+    const volumelbl = document.getElementById('volumelbl');
+    audio.volume = volumeControl.value;
+    volumeControl.addEventListener('input', function() {
+        audio.volume = this.value;
+        this.style.background = "linear-gradient(to right, #777 0%, #000 " + Math.round(this.value * 100).toString() +"%, #fff " + Math.round(this.value * 100).toString() +"%, #fff 100%)";
+    });
+    volumelbl.addEventListener('click', function(){
+        volumeControl.style.background = "linear-gradient(to right, #777 0%, #000 " + Math.round(volumeNum * 100).toString() +"%, #fff " + Math.round(volumeNum * 100).toString() +"%, #fff 100%)";
+        if(audio.volume !== 0){
+            volumeNum = audio.volume;
+            volumeControl.value = 0;
+            volumelbl.firstChild.src="images/VolumeOff.svg";
+            audio.volume = 0;
+        }
+        else{
+            audio.volume = volumeNum;
+            volumeControl.value = volumeNum;
+            volumelbl.firstChild.src="images/VolumeOn.svg";
+            volumeNum = 0;
+        }
+    });
+    speedControl.addEventListener('input', function() {
+        audio.playbackRate = this.value;
+    });
+    playbar.addEventListener('input', function() {
+        audio.currentTime = this.value * audio.duration;
+        updatePlaybar();
+    });
 });
 
 function change(cur){
-  for(let i=0; i<cur.length; i++){
+for(let i=0; i<cur.length; i++){
     if (cur[i].style.display === 'none'){
         cur[i].style.display = 'flex';
         window.setTimeout(function(){
             cur[i].style.opacity = 1;
             cur[i].style.transform = 'scale(1)';
-          },0);
+        },0);
     }
     else{
         cur[i].style.opacity = 0;
@@ -133,17 +168,15 @@ function change(cur){
         cur[i].style.display = 'none';
         },700);
     }
-  }
+}
 }
 function setAudioTime(elem){
     let time = elem.parentNode.parentNode.childNodes[1].nodeValue.split("-")[0].substring(3);
-    let audio = document.getElementById("audio-container").childNodes[1];
-    console.log(audio.currentTime);
-    if (audio.src.length > audioTagLength){
-        audio.src = audio.src.substring(0, audio.src.length - time.length-3);
-    }
-    audio.src += "#t="+time;
+    const [m,s] = time.split(":");
+    const seconds = (parseInt(m,10)*60+parseInt(s,10));
+    audio.currentTime=seconds;
     audio.play();
+    updatePlaybar();
 }
 
 window.addEventListener("load", function(e) { 
@@ -164,3 +197,25 @@ window.addEventListener("load", function(e) {
     var r = document.querySelector(':root');
     r.style.setProperty("--height", (getComputedStyle(r)["height"]));
 });
+function togglePlayback() {
+if (audio.paused) {
+        audio.play();
+        updatePlaybarInterval = setInterval(updatePlaybar, 100); // Update playbar every 100 milliseconds
+    } else {
+        audio.pause();
+        clearInterval(updatePlaybarInterval); // Clear the interval
+    }
+}
+function updatePlaybar() {
+    playbar.value = audio.currentTime / audio.duration;
+    const audtime= document.getElementById("audiotime");
+    const current= new Date(parseInt(audio.currentTime,10)*1000).toISOString().slice(14,19);
+    const dura= new Date(parseInt(audio.duration,10)*1000).toISOString().slice(14,19);
+    audtime.innerText = current+'/'+dura;
+    playbar.style.background = "linear-gradient(to right, #777 0%, #000 " + Math.round(playbar.value * 100).toString() +"%, #fff " + Math.round(playbar.value * 100).toString() +"%, #fff 100%)";
+}
+document.getElementById("playbar").oninput = function() {
+    this.style.background = 'linear-gradient(to right, #82CFD0 0%, #82CFD0 '+this.value +'%, #fff ' + this.value + '%, white 100%)'
+    console.log(this);
+};
+
