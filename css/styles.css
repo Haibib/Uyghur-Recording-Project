@@ -4,7 +4,7 @@
 body {
   font-size: 16px;
   color: #fff;
-  background-color: rgb(230, 230, 230);
+  background-color: #F2F3F4;
   font-family: 'UYGHUR', 'Work Sans', sans-serif;
   overflow-x: hidden;
   scrollbar-width:5px;
@@ -333,22 +333,19 @@ h1, h2, h3, h4{
 /* End Home Page */
 
 /* Conversation Page */
-#intro{
-  padding: 0px;
-  display:flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
 #rest-collection{
-  height:200px;
-  padding: 0px 10px;
-  float:left;
-  width:calc((100% - 30vw));
+  padding: 0px 0px 0px calc((29vw));
+  margin-left:calc((-30vw));
+  width: calc((81vw) - 10px);
   display:flex;
   flex-direction: column;
-  justify-content: flex-end;
-  margin-right:10px;
   background-color:#fff;
+  pointer-events: initial;
+  position: sticky;
+  top: -6vh;
+  z-index: 1;
+  justify-content:flex-end;
+  height:160px;
 }
 #toggle-collection{
   border:2px solid #00b8fd;
@@ -397,6 +394,10 @@ h1, h2, h3, h4{
 #intro{
   position: relative;
   margin-bottom: calc(-1 * var(--height));
+  padding: 0px;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 #intro:before {
   content: "";
@@ -408,21 +409,13 @@ h1, h2, h3, h4{
   display: block; 
   height: 1px; 
 }
-#rest-collection{
-  pointer-events: initial;
-  position: sticky;
-  top: -7vh;
-  z-index: 100;
-  justify-content:flex-end;
-  height:160px;
-}
 #conversation-page-container{
   margin-top:200px;
 }
 #audio-container{
   display:flex;
   text-align: center;
-  margin:0px 0px 20px;
+  margin:0px 0px 10px;
 }
 .recording{
   width: 100%;
@@ -746,14 +739,20 @@ p .footerLink:hover{
 /********** Medium devices only **********/
 @media (max-width: 768px) {
   #rest-collection{
-    bottom: 83vh;
-    z-index: 100;
-    width:100%;
+    bottom: 82vh;
+    padding: 0px 10px;
+    margin-left:0px;
+    width: 100%;
     height:120px;
     background-color:#fff;
+    z-index:100;
+    justify-content: center;
   }
   #toggle-collection{
-    margin-top:150px;
+    margin-top:135px;
+  }
+  #intro{
+    justify-content: center;
   }
 }
 
@@ -803,7 +802,7 @@ p .footerLink:hover{
 
   /* Home Page */
   #audio-container{
-    margin:0px 0px 20px;
+    margin:0px 0px 10px;
   }
   /* End Home Page */
 
@@ -828,7 +827,7 @@ p .footerLink:hover{
     width:100%;
   }
   #audio-container{
-    margin:0px 0px 20px;
+    margin:0px 0px 10px;
   }
   .subheader{
     margin-right:10%;
@@ -884,7 +883,7 @@ p .footerLink:hover{
     width:95vw;
   }
   #audio-container{
-    margin:0px 0px 20px;
+    margin:0px 0px 10px;
   }
 }
 /* Transcript table styles */
