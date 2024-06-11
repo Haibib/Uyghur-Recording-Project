@@ -100,19 +100,12 @@ function searchText() {
 
 function navigateToContext(url, contextId) {
     try {
-        const currentUrl = window.location.href.split('#')[0];
-        if (currentUrl === url) {
-            // Scroll to the context if we are already on the same page
-            const element = document.getElementById(contextId);
-            if (element) {
-                element.scrollIntoView({ behavior: 'smooth' });
-                element.classList.add('highlight');
-            }
-        } else {
-            // Use session storage to pass the context ID to the new page
-            sessionStorage.setItem('contextId', contextId);
-            window.location.href = url;
-        }
+        const element = document.getElementById(contextId);
+        element.scrollIntoView({ behavior: 'smooth' });
+        element.classList.add('highlight');
+        // Use session storage to pass the context ID to the new page
+        sessionStorage.setItem('contextId', contextId);
+        window.location.href = url;
     } catch (error) {
         console.error('Error navigating to context:', error);
     }
@@ -124,10 +117,8 @@ window.onload = function() {
     const contextId = sessionStorage.getItem('contextId');
     if (contextId) {
         const element = document.getElementById(contextId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-            element.classList.add('highlight');
-        }
+        element.scrollIntoView({ behavior: 'smooth' });
+        element.classList.add('highlight');
         sessionStorage.removeItem('contextId');
     }
 };
