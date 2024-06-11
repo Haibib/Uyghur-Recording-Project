@@ -100,28 +100,41 @@ function searchText() {
 
 function navigateToContext(url, contextId) {
     try {
-        const element = document.getElementById(contextId);
-        element.scrollIntoView({ behavior: 'smooth' });
-        element.classList.add('highlight');
-        // Use session storage to pass the context ID to the new page
-        sessionStorage.setItem('contextId', contextId);
-        window.location.href = url;
+        const currentUrl = window.location.href.split('#')[0];
+        if (currentUrl === url) {
+            // Scroll to the context if we are already on the same page
+            const element = document.getElementById(contextId);
+            if (element) {
+                const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+                window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+                element.classList.add('highlight');
+            }
+        } else {
+            // Use session storage to pass the context ID to the new page
+            sessionStorage.setItem('contextId', contextId);
+            window.location.href = url;
+        }
     } catch (error) {
         console.error('Error navigating to context:', error);
     }
 }
-
-// Check if there is a contextId in session storage and scroll to it
-window.onload = function() {
+window.onload = function(){
     fetchContentIndex();
+};
+// Check if there is a contextId in session storage and scroll to it
+window.onloadeddata = function() {
     const contextId = sessionStorage.getItem('contextId');
     if (contextId) {
         const element = document.getElementById(contextId);
-        element.scrollIntoView({ behavior: 'smooth' });
-        element.classList.add('highlight');
+        if (element) {
+            const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+            window.scrollTo({ top: elementPosition, behavior: 'smooth' });
+            element.classList.add('highlight');
+        }
         sessionStorage.removeItem('contextId');
     }
 };
+
 /*let currentMatchIndex = -1;
 let matches = [];
 
