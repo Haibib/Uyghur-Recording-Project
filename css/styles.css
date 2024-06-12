@@ -386,10 +386,10 @@ h1, h2, h3, h4{
 
 /* Conversation Page */
 #rest-collection{
-  padding: 0px 0px 0px calc(35%);
+  padding: 0px calc(5%) 0px calc(35%);
   margin-left:calc(-35%);
   width: calc(100% - 20px);
-  max-width: 78vw;
+  max-width: 85vw;
   display:flex;
   flex-direction: column;
   background-color:#fff;
@@ -676,6 +676,7 @@ div>p{
   transform: scale(1);
   transition: .6s ease opacity,.6s ease transform;
   align-items: center;
+  flex-wrap: wrap;
 }
 .metadataSubtitle{
   display:flex;
