@@ -1,5 +1,6 @@
 :root{
   --height: 10000px;
+  scrollbar-color: #444;
 }
 body {
   font-size: 16px;
@@ -166,13 +167,13 @@ div>div>p{
   position: absolute;
   border: 1px solid #ccc;
   background-color: white;
-  max-height: 200px;
+  max-height: 400px;
   overflow-y: auto;
   width: 300px;
   display: none;
   color: #222;
   z-index: 160;
-  margin-left: -25vw;
+  margin-left: -200px;
 }
 .search-dropdown div {
   padding: 10px;
