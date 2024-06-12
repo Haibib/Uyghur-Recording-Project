@@ -388,9 +388,9 @@ h1, h2, h3, h4{
 /* Conversation Page */
 #rest-collection{
   padding: 0px calc(5%) 0px calc(35%);
-  margin-left:calc(-30%);
+  margin-left:calc(-20%);
   width: calc(100% - 20px);
-  max-width: 80vw;
+  max-width: 90vw;
   display:flex;
   flex-direction: column;
   background-color:#fff;
