@@ -388,7 +388,7 @@ h1, h2, h3, h4{
 /* Conversation Page */
 #rest-collection{
   padding: 0px calc(5%) 0px calc(35%);
-  margin-left:calc(-20%);
+  margin-left:calc(-30%);
   width: calc(100% - 20px);
   max-width: 90vw;
   display:flex;
@@ -788,7 +788,9 @@ p .footerLink:hover{
 
 /********** Large devices only **********/
 @media (min-width: 1200px) {
-
+  #rest-collection{
+    margin-left: calc(-20%)
+  }
 }
 
 /********** Medium devices only **********/
