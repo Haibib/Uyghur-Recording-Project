@@ -2,7 +2,8 @@ window.addEventListener("load", function() {
     let container = document.getElementById("nav-container");
     let search = `<div id = "searchbar">
     <input type="text" id="search-input" placeholder="Search...">
-    <button " class="search-button" onclick="searchText()">Find</button>
+    <button class="search-button" onclick="searchText()">Find</button>
+    <button class="search-button "onclick="clearSearch()">Clear</button>
     <div id="search-results" class="search-dropdown"></div>
     </div>`;
     container.innerHTML = container.innerHTML+search;
@@ -72,7 +73,7 @@ function searchText() {
                 const context = content.substring(start, end).replace(regex, '<span class="highlight">$&</span>');
                 const contextId = `${title.replace(/\s+/g, '_')}-${match.index}`;
 
-                const result = `<div id="${contextId}" onclick="navigateToContext('${url}', '${contextId}')">${context}...</div>`;
+                const result = `<div class="results" id="${contextId}" onclick="navigateToContext('${url}', '${contextId}')">${context}...</div>`;
                 pageResults += result;
 
                 // Move the regex lastIndex forward to avoid infinite loop
@@ -97,13 +98,18 @@ function searchText() {
         resultsContainer.style.display = 'block';
     }
 }
-
+function clearSearch() {
+    document.getElementById('search-input').value = '';
+    const resultsContainer = document.getElementById('search-results');
+    resultsContainer.innerHTML = '';
+    resultsContainer.style.display = 'none';
+}
 function navigateToContext(url, contextId) {
     try {
         const currentUrl = window.location.href.split('#')[0];
         const element = document.getElementById(contextId);
         if (element) {
-            const elementPosition = element.offsetTop;
+            const elementPosition = element.offsetTop+1000;
             sessionStorage.setItem('elementPosition', elementPosition);
 
             if (currentUrl === url) {
