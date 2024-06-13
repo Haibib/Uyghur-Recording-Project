@@ -161,7 +161,6 @@ div>div>p{
 #searchbar{
   align-content: center;
   width: 17vw;
-  position: sticky;
 }
 .search-dropdown {
   position: absolute;
@@ -169,17 +168,17 @@ div>div>p{
   background-color: white;
   max-height: 400px;
   overflow-y: auto;
-  width: 300px;
+  width: 350px;
   display: none;
   color: #222;
-  z-index: 160;
+  z-index: 110;
   margin-left: -200px;
 }
 .search-dropdown div {
   padding: 10px;
   cursor: pointer;
 }
-.search-dropdown div:hover {
+.results:hover {
   background-color: #f0f0f0;
 }
 .highlight {
