@@ -149,7 +149,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 function switchLanguage(language, element) {
+    localStorage.setItem('selectedLanguage', language);
     const translation = translations[language];
+    
     document.getElementById('homepage-title').innerHTML = translations[language].homepagetitle;
     document.getElementById('paragraph-1').innerHTML = translations[language].paragraph1;
     document.getElementById('paragraph-2').innerHTML = translations[language].paragraph2;
