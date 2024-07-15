@@ -57,6 +57,35 @@ header{
   align-items: center;
   position: sticky;
 }
+.lang-switcher {
+  display: inline-flex;
+  border: 2px solid #007BFF;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.lang-option {
+  padding: 5px 10px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #007BFF;
+  border: none;
+  outline: none;
+}
+.lang-option.selected {
+  background-color: #007BFF;
+  color: #fff;
+}
+.lang-option:not(:last-child) {
+  border-right: 1px solid #007BFF;
+}
+.text-container {
+  text-align: left;
+  direction: ltr;
+}
+.text-container.rtl {
+  text-align: right;
+  direction: rtl;
+}
 #brand{
   font-size: 30px;
   color: #fff;
@@ -809,6 +838,22 @@ p .footerLink:hover{
   }
   #intro{
     justify-content: center;
+  }
+  .lang-option {
+    padding: 1px 2px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #007BFF;
+    border: none;
+    outline: none;
+    font-size: 10px;
+  }
+  .lang-switcher {
+    display: flex;
+    border: 2px solid #007BFF;
+    border-radius: 5px;
+    overflow: none;
+    float: left;
   }
 }
 
