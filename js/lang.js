@@ -4,7 +4,7 @@ const translations = {
         paragraph1: `Welcome! This collection of recordings represents a record of Modern Uyghur as used in casual conversation by diaspora speakers in the early 21 st century. The conversations are unscripted, unplanned, and recorded by the participants themselves in their homes or other spaces, with no researcher present.`,
         paragraph2: `This corpus is intended to be a resource for anyone learning Uyghur on their own, teaching Uyghur to others, or doing research on various aspects of Uyghur language and linguistics. The contents may be used freely for any of these purposes. Most of the conversations were recorded with the participants’ phones. Some of them used the iPhone settings that record full-quality lossless audio; others used the regular settings that involve some compression of the sound. One conversation was recorded over Zoom. The metadata on the page for each conversation specifies the details.`,
         paragraph3: `An explanation of the transcription conventions, the Uyghur Latin Script used in the transcripts, and the abbreviations used for the grammatical analysis can be found <span><a id="here-link" class="regularLink" href="misc/transcription_conventions.pdf">here</a></span>.`,
-        paragraph4: `Each transcript can also be downloaded as an .xml file and also as an .eaf file, which can be opened in the <span><a class="regularLink" href="https://archive.mpi.nl/tla/elan/download">program ELAN</a> along with the audio. To download a zip file containing all the recordings and transcripts, <span><a id="click-link" class="regularLink" href="zip/transcripts.zip">click here</a></span>.`,
+        paragraph4: `Each transcript can also be downloaded as an .xml file and also as an .eaf file, which can be opened in the program <span><a class="regularLink" href="https://archive.mpi.nl/tla/elan/download">ELAN</a> along with the audio. To download a zip file containing all the recordings and transcripts, click <span><a id="click-link" class="regularLink" href="zip/transcripts.zip">here</a></span>.`,
         contact: `<span>Contact: 
     </span> 
     <br id="email"> Email - <a class="footerLink" href="mfiddler@ucsb.edu">mfiddler@ucsb.edu</a> 
@@ -18,10 +18,20 @@ work, family, and a variety of other topics.`,
 hometown.`,
         c3: `Two friends take a walk in the park and chat about health, diet, and work.`,
         c4: `After school, a young boy chats with his mom at home.`,
-        direction: 'ltr'
+        direction: 'ltr',
+        h1:'Conversation 1',
+        h2:'Conversation 2',
+        h3:'Conversation 3',
+        h4:'Conversation 4',
+        audio:'Download audio file:',
+        trans:'Download transcript file:',
+        xml:'Download XML:',
+        on:'View online:',
+        more:"More conversations coming soon",
+        check:"Check back for updates"
     },
     uy: {
-        homepagetitle: `«Uyghurche söhbet toplimi»`,
+        homepagetitle: `Uyghurche söhbet toplimi`,
         paragraph1: `Essalammu eleykum, tor bétimizge xush keldingiz! Hazirqi alimlargha qarighanda, kündilik söhbet insan tilining eng asasliq wezipisi bolup, kündilik söhbettiki gepni küzitish we tetqiq
 qilish herqandaq tilning alahidilikini chüshinish üchün bir achquch dur. Bu toplamdiki awazliq
 xatiriler 21-esirning deslepki yillirida di&#39;asporadiki uyghurlar kündilik söhbetlerde ishlitidighan
@@ -36,11 +46,11 @@ toplamning mezmunlirini yuqirida déyilgen meqsetlerde erkin ishlitishke bolidu.
 halitide ünge élinghan. Yene bir söhbet zum supisida xatirilengen bolup her bir söhbetning
 sahibe melumatlirida, töwendikidek tepsilatlar yézilghan. Transkripsiye qilish qa&#39;idiliri,
 transkripsiyelerde ishlitilgen uyghur latin yéziqi we grammatikiliq tehlillerde ishlitilgen
-qisqartmilarning chüshendürülüshi bu yerdin <span><a id="here-link" class="regularLink" href="misc/transcription_conventions.pdf">tépilidu</a></span>.`,
+qisqartmilarning chüshendürülüshi <span><a id="here-link" class="regularLink" href="misc/transcription_conventions.pdf">bu yerdin</a></span> tépilidu.`,
         paragraph4: `Her bir söhbetning transkripsiyisi hem <.xml> hem <eaf> format süpitide chüshürüwélishqa
-bolidu. Bu <.eaf> formattiki höjjetler munasiwetlik awazliq höjjiti bilen <span><a class="regularLink" href="https://archive.mpi.nl/tla/elan/download">&lt;ELAN&gt; namliq
-programmisi</a></span> arqiliq achqili bolidu. Barliq awazliq höjjetler we transkripsiyilirini <.zip> halitide
-bille chüshürüwélish üchün, bu <span><a id="click-link" class="regularLink" href="zip/transcripts.zip">yerni chéking</a></span>.`,
+bolidu. Bu <.eaf> formattiki höjjetler munasiwetlik awazliq höjjiti bilen <span><a class="regularLink" href="https://archive.mpi.nl/tla/elan/download">&lt;ELAN&gt;
+</a></span> namliq programmisi arqiliq achqili bolidu. Barliq awazliq höjjetler we transkripsiyilirini <.zip> halitide
+bille chüshürüwélish üchün,<span><a id="click-link" class="regularLink" href="zip/transcripts.zip"> bu yerni </a></span>chéking.`,
         contact: `<span>Contact: 
 </span> 
 <br id="email"> Alaqe qilish üchün - <a class="footerLink" href="mfiddler@ucsb.edu">mfiddler@ucsb.edu</a> 
@@ -51,15 +61,25 @@ bille chüshürüwélish üchün, bu <span><a id="click-link" class="regularLink
 <hr class="visible-xs text-center"> `,
         c1: `Zum arqiliq, uyghur tili ders ötidighan ikki xizmetdash xizmet, a&#39;ile we bashqa xil
 témilarda paranglishidu.`,
-        c2: `bir jüp er-ayal tamaq yégendin kéyin yurtining xelq naxshiliri, medeniyet, we bashqa
+        c2: `Bir jüp er-ayal tamaq yégendin kéyin yurtining xelq naxshiliri, medeniyet, we bashqa
 xil ötken waqitlardiki xatiriliri heqqide paranglishidu.`,
-        c3: `ikki dost béghida aylinip, saghlamliq, yémek-ichmek we xizmet heqqide
+        c3: `Ikki dost béghida aylinip, saghlamliq, yémek-ichmek we xizmet heqqide
 paranglishidu.`,
-        c4: `mekteptin qaytqandin kéyin, bir bala anisi bilen öyde paranglishidu.`,
-        direction: 'ltr'
+        c4: `Mekteptin qaytqandin kéyin, bir bala anisi bilen öyde paranglishidu.`,
+        direction: 'ltr',
+        h1:'1-söhbet',
+        h2:'2-söhbet',
+        h3:'3-söhbet',
+        h4:'4-söhbet',
+        audio:'awaz höjjiti:',
+        trans:'transkripsiye höjjiti (ELAN):',
+        xml:'transkripsiye höjjiti (XML):',
+        on:'torda échish:',
+        more:"Yéqinda téximu köp söhbetler qoshulidu.",
+        check:"Yéngilanghan uchurlar üchün qaytakörüp turung"
     },
     ar: {
-        homepagetitle: `«ئۇيغۇرچە سۆھبەت توپلىمى»`,
+        homepagetitle: `ئۇيغۇرچە سۆھبەت توپلىمى`,
         paragraph1: `ئەسسالاممۇ ئەلەيكۇم، تور بېتىمىزگە خۇش كەلدىڭىز! ھازىرقى ئالىملارغا قارىغاندا، كۈندىلىك سۆھبەت ئىنسان تىلىنىڭ ئەڭ
 ئاساسلىق ۋەزىپىسى بولۇپ، كۈندىلىك سۆھبەتتىكى گەپنى كۈزىتىش ۋە تەتقىق قىلىش ھەرقانداق تىلنىڭ ئالاھىدىلىكىنى
 چۈشىنىش ئۈچۈن بىر ئاچقۇچ دۇر. بۇ توپلامدىكى ئاۋازلىق خاتىرىلەر 21-ئەسىرنىڭ دەسلەپكى يىللىرىدا دىئاسپورادىكى
@@ -73,10 +93,10 @@ paranglishidu.`,
 ئېلىنغان بولسا يەنە بەزىلىرى ئادەتتىكى ئاۋاز پرىسلاش فۇنكسىيەسى بولغان تەڭشەك ھالىتىدە ئۈنگە ئېلىنغان. يەنە بىر
 سۆھبەت زۇم سۇپىسىدا خاتىرىلەنگەن بولۇپ ھەر بىر سۆھبەتنىڭ ساھىبە مەلۇماتلىرىدا، تۆۋەندىكىدەك تەپسىلاتلار يېزىلغان.
 ترانسكرىپسىيە قىلىش قائىدىلىرى، ترانسكرىپسىيەلەردە ئىشلىتىلگەن ئۇيغۇر لاتىن يېزىقى ۋە گرامماتىكىلىق تەھلىللەردە
-ئىشلىتىلگەن قىسقارتمىلارنىڭ چۈشەندۈرۈلۈشى بۇ يەردىن <span><a id="here-link" class="regularLink" href="misc/transcription_conventions.pdf">ئىشلىتىلگەن.</a></span>`,
+.تېپلېدۇ <span><a id="here-link" class="regularLink" href="misc/transcription_conventions.pdf">بۇيەردىن</a></span>ئىشلىتىلگەن قىسقارتمىلارنىڭ چۈشەندۈرۈلۈشى  `,
         paragraph4: `ھەر بىر سۆھبەتنىڭ ترانسكرىپسىيىسى ھەم &lt;.xml&gt; ھەم &lt;.eaf&gt; فورمات سۈپىتىدە چۈشۈرۈۋېلىشقا بولىدۇ. بۇ &lt;.eaf&gt;
 فورماتتىكى ھۆججەتلەر مۇناسىۋەتلىك ئاۋازلىق ھۆججىتى بىلەن <span><a class="regularLink" href="https://archive.mpi.nl/tla/elan/download">&lt;ELAN&gt;</a></span> ناملىق پروگراممىسى ئارقىلىق ئاچقىلى بولىدۇ.
-بارلىق ئاۋازلىق ھۆججەتلەر ۋە ترانسكرىپسىيىلىرىنى &lt;.zip&gt; ھالىتىدە بىللە چۈشۈرۈۋېلىش ئۈچۈن، بۇ يەرنى <span><a id="click-link" class="regularLink" href="zip/transcripts.zip">چېكىڭ.</a></span>`,
+بارلىق ئاۋازلىق ھۆججەتلەر ۋە ترانسكرىپسىيىلىرىنى &lt;.zip&gt; ھالىتىدە بىللە چۈشۈرۈۋېلىش ئۈچۈن، <span><a id="click-link" class="regularLink" href="zip/transcripts.zip">بۇ يەرنى</a></span> چېكىڭ.`,
         contact: `<span>Contact: 
 </span> 
 <br id="email">ئالاقە قىلىش ئۈچۈن- <a class="footerLink" href="mfiddler@ucsb.edu">mfiddler@ucsb.edu</a> 
@@ -90,10 +110,20 @@ paranglishidu.`,
 ۋاقىتلاردىكى خاتىرىلىرى ھەققىدە پاراڭلىشىدۇ`,
         c3: `ئىككى دوست بېغىدا ئايلىنىپ، ساغلاملىق، يېمەك-ئىچمەك ۋە خىزمەت ھەققىدە پاراڭلىشىدۇ`,
         c4: `مەكتەپتىن قايتقاندىن كېيىن، بىر بالا ئانىسى بىلەن ئۆيدە پاراڭلىشىدۇ`,
-        direction: 'rtl'
+        direction: 'rtl',
+        h1:'1-سۆھبەت',
+        h2:'2-سۆھبەت',
+        h3:'3-سۆھبەت',
+        h4:'4-سۆھبەت',
+        audio:'ئاۋاز ھۆججىتى:',
+        trans:'(ELAN) ترانسكرىپسىيە ھۆججىتى:',
+        xml:'(XML) ترانسكرىپسىيە ھۆججىتى:',
+        on:'توردا ئېچىش:',
+        more:"يېقىندا تېخىمۇ كۆپ سۆھبەتلەر قوشۇلىدۇ.",
+        check:"يېڭىلانغان ئۇچۇرلار ئۈچۈن قايتا كۆرۈپ تۇرۇڭ."
     },
     cy: {
-        homepagetitle: `&quot;уйғурчә сөһбәт топлими&quot;`,
+        homepagetitle: `уйғурчә сөһбәт топлими`,
         paragraph1: `әссаламму әләйкум, тор бетимизгә хуш кәлдиңиз! һазирқи алимларға қариғанда, күндилик
 сөһбәт инсан тилиниң әң асаслиқ вәзиписи болуп, күндилик сөһбәттики гәпни күзитиш вә
 тәтқиқ қилиш һәрқандақ тилниң алаһидиликини чүшиниш үчүн бир ачқуч дур. бу
@@ -110,14 +140,14 @@ paranglishidu.`,
 функсийәси болған тәңшәк һалитидә үнгә елинған. йәнә бир сөһбәт зум суписида
 хатириләнгән болуп һәр бир сөһбәтниң саһибә мәлуматлирида, төвәндикидәк тәпсилатлар
 йезилған. транскрипсийә қилиш қаидилири, транскрипсийәләрдә ишлитилгән уйғур латин
-йезиқи вә грамматикилиқ тәһлилләрдә ишлитилгән қисқартмиларниң чүшәндүрүлүши бу
-йәрдин <span><a id="here-link" class="regularLink" href="misc/transcription_conventions.pdf">тепилиду.</a></span>.`,
+йезиқи вә грамматикилиқ тәһлилләрдә ишлитилгән қисқартмиларниң чүшәндүрүлүши <span><a id="here-link" class="regularLink" href="misc/transcription_conventions.pdf">бу
+йәрдин</a></span> тепилиду.`,
         paragraph4: `һәр бир сөһбәтниң транскрипсийиси һәм &lt;.xml&gt; һәм &lt;.eaf&gt; формат сүпитидә
 чүшүрүвелишқа болиду. бу &lt;.eaf&gt; форматтики һөҗҗәтләр мунасивәтлик авазлиқ
 <span><a class="regularLink" href="https://archive.mpi.nl/tla/elan/download">һөҗҗити
 билән &lt;ELAN&gt;</a> намлиқ программиси арқилиқ ачқили болиду. барлиқ авазлиқ һөҗҗәтләр
-вә транскрипсийилирини &lt;.zip&gt; һалитидә биллә чүшүрүвелиш үчүн, бу
-<span><a id="click-link" class="regularLink" href="zip/transcripts.zip">йәрни чекиң.</a></span>.`,
+вә транскрипсийилирини &lt;.zip&gt; һалитидә биллә чүшүрүвелиш үчүн, 
+<span><a id="click-link" class="regularLink" href="zip/transcripts.zip">бу йәрни</a></span> чекиң.`,
         contact: `<span>Contact: 
 </span> 
 <br id="email">алақә қилиш үчүн - <a class="footerLink" href="mfiddler@ucsb.edu">mfiddler@ucsb.edu</a> 
@@ -133,7 +163,17 @@ paranglishidu.`,
         c3: `икки дост беғида айлинип, сағламлиқ, йемәк-ичмәк вә хизмәт һәққидә
 параңлишиду.`,
         c4: `мәктәптин қайтқандин кейин, бир бала аниси билән өйдә параңлишиду.`,
-        direction: 'ltr'
+        direction: 'ltr',
+        h1:'1-сөһбәт',
+        h2:'2-сөһбәт',
+        h3:'3-сөһбәт',
+        h4:'4-сөһбәт',
+        audio:'аваз һөҗҗити:',
+        trans:'транскрипсийә һөҗҗити (ELAN):',
+        xml:'транскрипсийә һөҗҗити (XML):',
+        on:'аваз һөҗҗити:',
+        more:"йеқинда техиму көп сөһбәтләр қошулиду.",
+        check:"йеңиланған учурлар үчүн қайта көрүп туруң."
     }
 };
 
@@ -162,6 +202,28 @@ function switchLanguage(language, element) {
     document.getElementById('c2-des').innerHTML = translations[language].c2;
     document.getElementById('c3-des').innerHTML = translations[language].c3;
     document.getElementById('c4-des').innerHTML = translations[language].c4;
+    document.getElementById('h-1').innerHTML = translations[language].h1;
+    document.getElementById('h-2').innerHTML = translations[language].h2;
+    document.getElementById('h-3').innerHTML = translations[language].h3;
+    document.getElementById('h-4').innerHTML = translations[language].h4;
+    document.getElementById('more').innerHTML = translations[language].more;
+    document.getElementById('check').innerHTML = translations[language].check;
+    const textElements = document.querySelectorAll('.d-audio');
+    for (i=0; i<textElements.length;i++) {
+        textElements[i].innerHTML = translations[language].audio;
+    }
+    const textElements1 = document.querySelectorAll('.d-trans');
+    for (i=0; i<textElements1.length;i++) {
+        textElements1[i].innerHTML = translations[language].trans;
+    }
+    const textElements2 = document.querySelectorAll('.d-xml');
+    for (i=0; i<textElements2.length;i++) {
+        textElements2[i].innerHTML = translations[language].xml;
+    }
+    const textElements3 = document.querySelectorAll('.v-on');
+    for (i=0; i<textElements3.length;i++) {
+        textElements3[i].innerHTML = translations[language].on;
+    }
 
     let textContainer = document.getElementById('main-text');
     textContainer.className = `text-container ${translation.direction === 'rtl' ? 'rtl' : ''}`;
