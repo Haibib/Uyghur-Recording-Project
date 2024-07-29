@@ -8,7 +8,7 @@ function loadXMLDoc() {
             empDetails(xmlhttp); 
         } 
     };
-    title = "xml/" + conversation.replace(/\s/g, '') + ".xml";
+    title = "xml/" + conversation.replace(/\s/g, '') + "_2024.07.18.xml";
     xmlhttp.open("GET", title, true); 
     xmlhttp.send(); 
 }
@@ -22,24 +22,24 @@ function empDetails(xml) {
     var table = '';
     for(let i = 1; i < annotation.length; i++){
         table += `<div class = "annotations"> `;
-        let tempSeg = annotation[i].getElementsByTagName("seg")[0].innerHTML.split(" ");
-        let segString="";
+        let tempMorph = annotation[i].getElementsByTagName("morph")[0].innerHTML.split(" ");
+        let morphString="";
         let tempGloss = annotation[i].getElementsByTagName("gloss")[0].innerHTML.split(" ");
         let glossString="";
-        let segCount = 0;
+        let morphCount = 0;
         let glossCount = 0;
-        for(let d = 0; d<tempSeg.length; d++){
-            if(tempSeg[segCount]=="[speaker"){
-                segCount++;
-                tempSeg[segCount]=tempSeg[segCount-1]+" "+tempSeg[segCount];
+        for(let d = 0; d<tempMorph.length; d++){
+            if(tempMorph[morphCount]=="[speaker"){
+                morphCount++;
+                tempMorph[morphCount]=tempMorph[morphCount-1]+" "+tempMorph[morphCount];
             }
             if(tempGloss[glossCount]=="[speaker"){
                 glossCount++;
                 tempGloss[glossCount]=tempGloss[glossCount-1]+" "+ tempGloss[glossCount];
             }
-            segString+='<span class="part segPart'+d+'">'+ tempSeg[segCount]+'</span>';
+            morphString+='<span class="part segPart'+d+'">'+ tempMorph[morphCount]+'</span>';
             glossString+='<span class="part glossPart'+d+'">'+ tempGloss[glossCount]+'</span>';
-            segCount++;
+            morphCount++;
             glossCount++;
         }
         let timestamp = annotation[i].getElementsByTagName("timestamp")[0].innerHTML;
@@ -50,7 +50,7 @@ function empDetails(xml) {
         }
         table += '<div class = "timestamp transcriptElement"><span class="elementTitle"><button id="timeButton" onclick="setAudioTime(this)">Timestamp</button></span>' + timestamp + '</div>';
         table += '<div class = "iu transcriptElement"><span class="elementTitle">IU</span>' + iu + '</div>';
-        table += '<div class = "seg transcriptElement"><span class="elementTitle">Morph</span>' + segString + '</div>';
+        table += '<div class = "seg transcriptElement"><span class="elementTitle">Morph</span>' + morphString + '</div>';
         table += '<div class = "gloss transcriptElement"><span class="elementTitle">Gloss</span>' + glossString + '</div>';
         table += '<div class = "eng transcriptElement"><span class="elementTitle">English</span>' + eng + '</div>';
         table += '</div>'
@@ -103,14 +103,14 @@ document.addEventListener('DOMContentLoaded', function() {
     loadXMLDoc();
     var selectors = document.getElementsByClassName("form-check-input");
 var iu = document.getElementsByClassName("iu");
-var seg = document.getElementsByClassName("seg");
+var morph = document.getElementsByClassName("seg");
 var gloss = document.getElementsByClassName("gloss");
 var eng = document.getElementsByClassName("eng");
     selectors[0].addEventListener('click', function(){
         change(iu);
     });
     selectors[1].addEventListener('click', function(){
-        change(seg);
+        change(morph);
     });
     selectors[2].addEventListener('click', function(){
         change(gloss);
@@ -182,14 +182,14 @@ function setAudioTime(elem){
 window.addEventListener("load", function(e) { 
     setTimeout(() => {
         let max = 0;
-        let segParts = document.getElementsByClassName("seg");
+        let morphParts = document.getElementsByClassName("seg");
         let glossParts = document.getElementsByClassName("gloss");
-        for(let c = 0; c<Math.min(segParts.length, glossParts.length); c++){
-            let segLine = segParts[c].childNodes;
+        for(let c = 0; c<Math.min(morphParts.length, glossParts.length); c++){
+            let morphLine = morphParts[c].childNodes;
             let glossLine = glossParts[c].childNodes;
-            for(let d = 1; d<Math.min(segLine.length, glossLine.length); d++){
-                max = Math.max(segLine[d].offsetWidth, glossLine[d].offsetWidth)+10;
-                segLine[d].style.width=max+"px";
+            for(let d = 1; d<Math.min(morphLine.length, glossLine.length); d++){
+                max = Math.max(morphLine[d].offsetWidth, glossLine[d].offsetWidth)+10;
+                morphLine[d].style.width=max+"px";
                 glossLine[d].style.width=max+"px";
             }
         }
