@@ -340,6 +340,7 @@ h1, h2, h3, h4{
   justify-content: flex-start;
   padding: 0px 10px;
   width:100%;
+  height:auto;
 }
 
 .card-info {
@@ -360,6 +361,8 @@ h1, h2, h3, h4{
   font-size: 0.85em;
   margin-top: 8px;
   pointer-events:all !important;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* -- ↓ ↓ ↓ some responsiveness ↓ ↓ ↓ -- */
@@ -382,9 +385,6 @@ h1, h2, h3, h4{
 }
 
 @media(max-width: 760px) {
-  .card {
-    height: 200px;
-  }
 
   .card-description {
     height: 60px;
@@ -539,7 +539,10 @@ h1, h2, h3, h4{
   background: #111;
   cursor: pointer;
 }
-
+.white{
+  size:0px;
+  font-size: 0px;
+}
 #volume::-moz-range-thumb {
   width: 5px;
   height: 5px;
@@ -737,8 +740,24 @@ div>p{
   display:block;
   margin-bottom:30px;
 }
+.tab{
+  tab-size: 0;
+}
 .speaker_A span, .speaker_B span, .speaker{
   font-weight:bold;
+}
+.d-audio, .d-trans, .d-xml, .v-on{
+  margin-left: 5%;
+  margin-top:8px;
+}
+.audio-link, .transcript-link, .xml-link{
+  margin-right: 5%;
+  margin-top:8px;
+}
+pre{
+  display: inline-flex;
+  margin: 0 0 0 0;
+  overflow: hidden;
 }
 .part{
   display:inline-flex;
