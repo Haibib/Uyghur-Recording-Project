@@ -1,7 +1,7 @@
 const translations = {
     en: {
         homepagetitle: `The Corpus of Conversational Uyghur`,
-        paragraph1: `Welcome! This collection of recordings represents a record of Modern Uyghur as used in casual conversation by diaspora speakers in the early 21 st century. The conversations are unscripted, unplanned, and recorded by the participants themselves in their homes or other spaces, with no researcher present.`,
+        paragraph1: `Welcome! This collection of recordings represents a record of Modern Uyghur as used in casual conversation by diaspora speakers in the early 21<sup>st</sup> century. The conversations are unscripted, unplanned, and recorded by the participants themselves in their homes or other spaces, with no researcher present.`,
         paragraph2: `This corpus is intended to be a resource for anyone learning Uyghur on their own, teaching Uyghur to others, or doing research on various aspects of Uyghur language and linguistics. The contents may be used freely for any of these purposes. Most of the conversations were recorded with the participants’ phones. Some of them used the iPhone settings that record full-quality lossless audio; others used the regular settings that involve some compression of the sound. One conversation was recorded over Zoom. The metadata on the page for each conversation specifies the details.`,
         paragraph3: `An explanation of the transcription conventions, the Uyghur Latin Script used in the transcripts, and the abbreviations used for the grammatical analysis can be found <span><a id="here-link" class="regularLink" href="misc/transcription_conventions.pdf">here</a></span>.`,
         paragraph4: `Each transcript can also be downloaded as an .xml file and also as an .eaf file, which can be opened in the program <span><a class="regularLink" href="https://archive.mpi.nl/tla/elan/download">ELAN</a> along with the audio. To download a zip file containing all the recordings and transcripts, click <span><a id="click-link" class="regularLink" href="zip/transcripts.zip">here</a></span>.`,
@@ -50,7 +50,7 @@ qisqartmilarning chüshendürülüshi <span><a id="here-link" class="regularLink
         paragraph4: `Her bir söhbetning transkripsiyisi hem <.xml> hem <eaf> format süpitide chüshürüwélishqa
 bolidu. Bu <.eaf> formattiki höjjetler munasiwetlik awazliq höjjiti bilen <span><a class="regularLink" href="https://archive.mpi.nl/tla/elan/download">&lt;ELAN&gt;
 </a></span> namliq programmisi arqiliq achqili bolidu. Barliq awazliq höjjetler we transkripsiyilirini <.zip> halitide
-bille chüshürüwélish üchün,<span><a id="click-link" class="regularLink" href="zip/transcripts.zip"> bu yerni </a></span>chéking.`,
+bille chüshürüwélish üchün, <span><a id="click-link" class="regularLink" href="zip/transcripts.zip"> bu yerni </a></span>chéking.`,
         contact: `<span>Contact: 
 </span> 
 <br id="email"> Alaqe qilish üchün - <a class="footerLink" href="mfiddler@ucsb.edu">mfiddler@ucsb.edu</a> 
@@ -76,7 +76,7 @@ paranglishidu.`,
         xml:'transkripsiye höjjiti (XML):',
         on:'torda échish:',
         more:"Yéqinda téximu köp söhbetler qoshulidu.",
-        check:"Yéngilanghan uchurlar üchün qaytakörüp turung"
+        check:"Yéngilanghan uchurlar üchün qaytakörüp turung."
     },
     ar: {
         homepagetitle: `ئۇيغۇرچە سۆھبەت توپلىمى`,
@@ -92,8 +92,8 @@ paranglishidu.`,
         paragraph3: `سۆھبەتلەرنىڭ كۆپىنچىسى قاتناشقۇچىلارنىڭ يانفونلىرى ئارقىلىق خاتىرىلەنگەن بولۇپ، بەزىلىرى يۇقىرى ئېنىقلىقتا ئۈنگە
 ئېلىنغان بولسا يەنە بەزىلىرى ئادەتتىكى ئاۋاز پرىسلاش فۇنكسىيەسى بولغان تەڭشەك ھالىتىدە ئۈنگە ئېلىنغان. يەنە بىر
 سۆھبەت زۇم سۇپىسىدا خاتىرىلەنگەن بولۇپ ھەر بىر سۆھبەتنىڭ ساھىبە مەلۇماتلىرىدا، تۆۋەندىكىدەك تەپسىلاتلار يېزىلغان.
-ترانسكرىپسىيە قىلىش قائىدىلىرى، ترانسكرىپسىيەلەردە ئىشلىتىلگەن ئۇيغۇر لاتىن يېزىقى ۋە گرامماتىكىلىق تەھلىللەردە
-.تېپلېدۇ <span><a id="here-link" class="regularLink" href="misc/transcription_conventions.pdf">بۇيەردىن</a></span>ئىشلىتىلگەن قىسقارتمىلارنىڭ چۈشەندۈرۈلۈشى  `,
+ترانسكرىپسىيە قىلىش قا&#39;ئىدىلىرى، ترانسكرىپسىيەلەردە ئىشلىتىلگەن ئۇيغۇر لاتىن يېزىقى ۋە گرامماتىكىلىق تەھلىللەردە
+ئىشلىتىلگەن قىسقارتمىلارنىڭ چۈشەندۈرۈلۈشى بۇ <span><a id="here-link" class="regularLink" href="misc/transcription_conventions.pdf">يەردىن</a> تېپىلىدۇ.`,
         paragraph4: `ھەر بىر سۆھبەتنىڭ ترانسكرىپسىيىسى ھەم &lt;.xml&gt; ھەم &lt;.eaf&gt; فورمات سۈپىتىدە چۈشۈرۈۋېلىشقا بولىدۇ. بۇ &lt;.eaf&gt;
 فورماتتىكى ھۆججەتلەر مۇناسىۋەتلىك ئاۋازلىق ھۆججىتى بىلەن <span><a class="regularLink" href="https://archive.mpi.nl/tla/elan/download">&lt;ELAN&gt;</a></span> ناملىق پروگراممىسى ئارقىلىق ئاچقىلى بولىدۇ.
 بارلىق ئاۋازلىق ھۆججەتلەر ۋە ترانسكرىپسىيىلىرىنى &lt;.zip&gt; ھالىتىدە بىللە چۈشۈرۈۋېلىش ئۈچۈن، <span><a id="click-link" class="regularLink" href="zip/transcripts.zip">بۇ يەرنى</a></span> چېكىڭ.`,
@@ -105,20 +105,19 @@ paranglishidu.`,
 <p id="footer-description">بۇ پروجېكت كالىفورنىيە ئۇنىۋېرسىتېت سانتا باربارا (UCSB)-دىكى دوكتۇر ئاسپىرانتى مايكىل فىدلېر (Michael Fiddler) بىلەنن.<a class="footerLink" href="https://uyghursfoundation.org/en/">ئۇيغۇر پروجېكت فوندى</a> تەرىپىدىن قىلىنغا.</p> 
 <hr class="visible-xs text-center"> `,
         c1: `زۇم ئارقىلىق، ئۇيغۇر تىلى دەرس ئۆتىدىغان ئىككى خىزمەتداش خىزمەت، ئائىلە ۋە باشقا خىل تېمىلاردا
-پاراڭلىشىدۇ`,
-        c2: `بىر جۈپ ئەر-ئايال تاماق يېگەندىن كېيىن يۇرتىنىڭ خەلق ناخشىلىرى، مەدەنىيەت، ۋە باشقا خىل ئۆتكەن
-ۋاقىتلاردىكى خاتىرىلىرى ھەققىدە پاراڭلىشىدۇ`,
-        c3: `ئىككى دوست بېغىدا ئايلىنىپ، ساغلاملىق، يېمەك-ئىچمەك ۋە خىزمەت ھەققىدە پاراڭلىشىدۇ`,
-        c4: `مەكتەپتىن قايتقاندىن كېيىن، بىر بالا ئانىسى بىلەن ئۆيدە پاراڭلىشىدۇ`,
+.پاراڭلىشىدۇ.`,
+        c2: `بىر جۈپ ئەر-ئايال تاماق يېگەندىن كېيىن يۇرتىنىڭ خەلق ناخشىلىرى، مەدەنىيەت، ۋە باشقا خىل ئۆتكەن ۋاقىتلاردىكى خاتىرىلىرى ھەققىدە پاراڭلىشىدۇ.`,
+        c3: `.ئىككى دوست بېغىدا ئايلىنىپ، ساغلاملىق، يېمەك-ئىچمەك ۋە خىزمەت ھەققىدە پاراڭلىشىدۇ`,
+        c4: `.مەكتەپتىن قايتقاندىن كېيىن، بىر بالا ئانىسى بىلەن ئۆيدە پاراڭلىشىدۇ`,
         direction: 'rtl',
-        h1:'1-سۆھبەت',
-        h2:'2-سۆھبەت',
-        h3:'3-سۆھبەت',
-        h4:'4-سۆھبەت',
-        audio:'ئاۋاز ھۆججىتى:',
-        trans:'(ELAN) ترانسكرىپسىيە ھۆججىتى:',
-        xml:'(XML) ترانسكرىپسىيە ھۆججىتى:',
-        on:'توردا ئېچىش:',
+        h1: 'سوھبەت- One',
+        h2:'سۆھبەت- Two',
+        h3:'سۆھبەت- Three',
+        h4:'سۆھبەت- Four',
+        audio:'ئاۋاز ھۆججىتى',
+        trans:'(ELAN) ترانسكرىپسىيە ھۆججىتى',
+        xml:'(XML) ترانسكرىپسىيە ھۆججىتى',
+        on:'توردا ئېچىش',
         more:"يېقىندا تېخىمۇ كۆپ سۆھبەتلەر قوشۇلىدۇ.",
         check:"يېڭىلانغان ئۇچۇرلار ئۈچۈن قايتا كۆرۈپ تۇرۇڭ."
     },
@@ -144,8 +143,7 @@ paranglishidu.`,
 йәрдин</a></span> тепилиду.`,
         paragraph4: `һәр бир сөһбәтниң транскрипсийиси һәм &lt;.xml&gt; һәм &lt;.eaf&gt; формат сүпитидә
 чүшүрүвелишқа болиду. бу &lt;.eaf&gt; форматтики һөҗҗәтләр мунасивәтлик авазлиқ
-<span><a class="regularLink" href="https://archive.mpi.nl/tla/elan/download">һөҗҗити
-билән &lt;ELAN&gt;</a> намлиқ программиси арқилиқ ачқили болиду. барлиқ авазлиқ һөҗҗәтләр
+һөҗҗити билән <span><a class="regularLink" href="https://archive.mpi.nl/tla/elan/download">&lt;ELAN&gt;</a> намлиқ программиси арқилиқ ачқили болиду. барлиқ авазлиқ һөҗҗәтләр
 вә транскрипсийилирини &lt;.zip&gt; һалитидә биллә чүшүрүвелиш үчүн, 
 <span><a id="click-link" class="regularLink" href="zip/transcripts.zip">бу йәрни</a></span> чекиң.`,
         contact: `<span>Contact: 
@@ -191,6 +189,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
 function switchLanguage(language, element) {
     localStorage.setItem('selectedLanguage', language);
     const translation = translations[language];
+    if (language== "ar") {
+        const textElements = document.querySelectorAll('.card-info-title');
+        textElements[0].innerHTML = `<h3 id="h-1">Conversation 1</h3>
+              <h4><a class="audio-link " href="audio/Conversation1.mp3"> Conversation1.mp3</a><span class="d-audio">Download audio file:</span></h4>
+              <h4><a class="transcript-link" href="ElanFiles/Conversation1_transcript_2024.07.18.eaf"> Conversation1.eaf</a><span class="d-trans">Download transcript file:</span></h4>
+              <h4><a class="xml-link" href="xml/conversation_1_2024.07.18.xml"> Conversation1.xml</a><span class="d-xml">Download XML:</span></h4>
+              <h4><a class="transcript-link" href="English-Convo1.html"> Conversation 1</a><span class="v-on">View Online:</span></h4>`;
+        textElements[1].innerHTML = `<h3 id="h-2">Conversation 2</h3>
+              <h4><a class="audio-link " href="audio/Conversation2.mp3"> Conversation2.mp3</a><span class="d-audio">Download audio file:</span></h4>
+              <h4><a class="transcript-link" href="ElanFiles/Conversation2_transcript_2024.07.18.eaf"> Conversation2.eaf</a><span class="d-trans">Download transcript file:</span></h4>
+              <h4><a class="xml-link" href="xml/conversation_2_2024.07.18.xml"> Conversation2.xml</a><span class="d-xml">Download XML:</span></h4>
+              <h4><a class="transcript-link" href="English-Convo2.html"> Conversation 2</a><span class="v-on">View Online:</span></h4>`;
+        textElements[2].innerHTML = `<h3 id="h-3">Conversation 3</h3>
+              <h4><a class="audio-link " href="audio/Conversation3.mp3"> Conversation3.mp3</a><span class="d-audio">Download audio file:</span></h4>
+              <h4><a class="transcript-link" href="ElanFiles/Conversation3_transcript_2024.07.18.eaf"> Conversation3.eaf</a><span class="d-trans">Download transcript file:</span></span></h4>
+              <h4><a class="xml-link" href="xml/conversation_3_2024.07.18.xml"> Conversation3.xml</a><span class="d-xml">Download XML:</span></h4>
+              <h4><a class="transcript-link" href="English-Convo3.html"> Conversation 3</a><span class="v-on">View Online:</span></h4>`;
+        textElements[3].innerHTML = `<h3 id="h-4">Conversation 4</h3>
+              <h4><a class="audio-link " href="audio/Conversation4.mp3"> Conversation4.mp3</a><span class="d-audio">Download audio file:</span></h4>
+              <h4><a class="transcript-link" href="ElanFiles/Conversation4_transcript_2024.07.18.eaf"> Conversation4.eaf</a><span class="d-trans">Download transcript file:</span></h4>
+              <h4><a class="xml-link" href="xml/conversation_4_2024.07.18.xml"> Conversation4.xml</a><span class="d-xml">Download XML:</span></h4>
+              <h4><a class="transcript-link" href="English-Convo4.html"> Conversation 4</a><span class="v-on">View Online:</span></h4>`;
+    }
     
     document.getElementById('homepage-title').innerHTML = translations[language].homepagetitle;
     document.getElementById('paragraph-1').innerHTML = translations[language].paragraph1;
