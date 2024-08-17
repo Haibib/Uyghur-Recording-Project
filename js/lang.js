@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 function switchLanguage(language, element) {
     localStorage.setItem('selectedLanguage', language);
     const translation = translations[language];
-    let textElements = document.querySelectorAll('.card-info-title');
+    const textElements = document.querySelectorAll('.card-info-title');
     if (language== "ar") {
         textElements[0].innerHTML = `<h3 id="h-1">Conversation 1</h3>
               <h4><a class="audio-link " href="audio/Conversation1.mp3"> Conversation1.mp3</a><span class="d-audio">Download audio file:</span></h4>
@@ -251,7 +251,7 @@ function switchLanguage(language, element) {
     document.getElementById('more').innerHTML = translations[language].more;
     document.getElementById('check').innerHTML = translations[language].check;
     const textElements0 = document.querySelectorAll('.d-audio');
-    for (i=0; i<textElements.length;i++) {
+    for (i=0; i<textElements0.length;i++) {
         textElements0[i].innerHTML = translations[language].audio;
     }
     const textElements1 = document.querySelectorAll('.d-trans');
