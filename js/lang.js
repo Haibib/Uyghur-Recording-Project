@@ -189,8 +189,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 function switchLanguage(language, element) {
     localStorage.setItem('selectedLanguage', language);
     const translation = translations[language];
+    let textElements = document.querySelectorAll('.card-info-title');
     if (language== "ar") {
-        const textElements = document.querySelectorAll('.card-info-title');
         textElements[0].innerHTML = `<h3 id="h-1">Conversation 1</h3>
               <h4><a class="audio-link " href="audio/Conversation1.mp3"> Conversation1.mp3</a><span class="d-audio">Download audio file:</span></h4>
               <h4><a class="transcript-link" href="ElanFiles/Conversation1_transcript_2024.07.18.eaf"> Conversation1.eaf</a><span class="d-trans">Download transcript file:</span></h4>
@@ -211,6 +211,27 @@ function switchLanguage(language, element) {
               <h4><a class="transcript-link" href="ElanFiles/Conversation4_transcript_2024.07.18.eaf"> Conversation4.eaf</a><span class="d-trans">Download transcript file:</span></h4>
               <h4><a class="xml-link" href="xml/conversation_4_2024.07.18.xml"> Conversation4.xml</a><span class="d-xml">Download XML:</span></h4>
               <h4><a class="transcript-link" href="English-Convo4.html"> Conversation 4</a><span class="v-on">View Online:</span></h4>`;
+    }  else {
+        textElements[0].innerHTML = `<h3 id="h-1">Conversation 1</h3>
+              <h4><span class="d-audio">Download audio file:</span><a class="audio-link " href="audio/Conversation1.mp3"> Conversation1.mp3</a></h4>
+              <h4><span class="d-trans">Download transcript file:</span><a class="transcript-link" href="ElanFiles/Conversation1_transcript_2024.07.18.eaf"> Conversation1.eaf</a></h4>
+              <h4><span class="d-xml">Download XML:</span><a class="xml-link" href="xml/conversation_1_2024.07.18.xml"> Conversation1.xml</a></h4>
+              <h4><span class="v-on">View Online:</span><a class="transcript-link" href="English-Convo1.html"> Conversation 1</a></h4>`;
+        textElements[1].innerHTML = `<h3 id="h-2">Conversation 2</h3>
+              <h4><span class="d-audio">Download audio file:</span>  <a class="audio-link " href="audio/Conversation2.mp3"> Conversation2.mp3</a></h4>
+              <h4><span class="d-trans">Download transcript file:</span><a class="transcript-link" href="ElanFiles/Conversation2_transcript_2024.07.18.eaf"> Conversation2.eaf</a></h4>
+              <h4><span class="d-xml">Download XML:</span>  <a class="xml-link" href="xml/conversation_2_2024.07.18.xml"> Conversation2.xml</a></h4>
+              <h4><span class="v-on">View Online:</span>  <a class="transcript-link" href="English-Convo2.html"> Conversation 2</a></h4>`;
+        textElements[2].innerHTML = `<h3 id="h-3">Conversation 3</h3>
+              <h4><span class="d-audio">Download audio file:</span>  <a class="audio-link " href="audio/Conversation3.mp3"> Conversation3.mp3</a></h4>
+              <h4><span class="d-trans">Download transcript file:</span></span><a class="transcript-link" href="ElanFiles/Conversation3_transcript_2024.07.18.eaf"> Conversation3.eaf</a></h4>
+              <h4><span class="d-xml">Download XML:</span>  <a class="xml-link" href="xml/conversation_3_2024.07.18.xml"> Conversation3.xml</a></h4>
+              <h4><span class="v-on">View Online:</span>  <a class="transcript-link" href="English-Convo3.html"> Conversation 3</a></h4>`;
+        textElements[3].innerHTML = `<h3 id="h-4">Conversation 4</h3>
+              <h4><span class="d-audio">Download audio file:</span>  <a class="audio-link " href="audio/Conversation4.mp3"> Conversation4.mp3</a></h4>
+              <h4><span class="d-trans">Download transcript file:  </span><a class="transcript-link" href="ElanFiles/Conversation4_transcript_2024.07.18.eaf"> Conversation4.eaf</a></h4>
+              <h4><span class="d-xml">Download XML:</span>  <a class="xml-link" href="xml/conversation_4_2024.07.18.xml"> Conversation4.xml</a></h4>
+              <h4><span class="v-on">View Online:</span>  <a class="transcript-link" href="English-Convo4.html"> Conversation 4</a></h4>`;
     }
     
     document.getElementById('homepage-title').innerHTML = translations[language].homepagetitle;
@@ -229,9 +250,9 @@ function switchLanguage(language, element) {
     document.getElementById('h-4').innerHTML = translations[language].h4;
     document.getElementById('more').innerHTML = translations[language].more;
     document.getElementById('check').innerHTML = translations[language].check;
-    const textElements = document.querySelectorAll('.d-audio');
+    const textElements0 = document.querySelectorAll('.d-audio');
     for (i=0; i<textElements.length;i++) {
-        textElements[i].innerHTML = translations[language].audio;
+        textElements0[i].innerHTML = translations[language].audio;
     }
     const textElements1 = document.querySelectorAll('.d-trans');
     for (i=0; i<textElements1.length;i++) {
