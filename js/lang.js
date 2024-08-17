@@ -211,7 +211,7 @@ function switchLanguage(language, element) {
               <h4><a class="transcript-link" href="ElanFiles/Conversation4_transcript_2024.07.18.eaf"> Conversation4.eaf</a><span class="d-trans">Download transcript file:</span></h4>
               <h4><a class="xml-link" href="xml/conversation_4_2024.07.18.xml"> Conversation4.xml</a><span class="d-xml">Download XML:</span></h4>
               <h4><a class="transcript-link" href="English-Convo4.html"> Conversation 4</a><span class="v-on">View Online:</span></h4>`;
-    }  else {
+    } else {
         textElements[0].innerHTML = `<h3 id="h-1">Conversation 1</h3>
               <h4><span class="d-audio">Download audio file:</span><a class="audio-link " href="audio/Conversation1.mp3"> Conversation1.mp3</a></h4>
               <h4><span class="d-trans">Download transcript file:</span><a class="transcript-link" href="ElanFiles/Conversation1_transcript_2024.07.18.eaf"> Conversation1.eaf</a></h4>
