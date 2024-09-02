@@ -12,8 +12,7 @@ const translations = {
     
     <p id="footer-description">*Project organized by Michael Fiddler, in collaboration with the <a class="footerLink" href="https://uyghursfoundation.org/en/">Uyghur Projects Foundation</a></p> 
     <hr class="visible-xs text-center"> `,
-        c1: `A Zoom call between two colleagues who both teach Uyghur language classes, discussing
-work, family, and a variety of other topics.`,
+        c1: `Two colleagues who both teach Uyghur language classes talk over Zoom about work, family, and a variety of other topics.`,
         c2: `A husband and wife chat after a meal about their memories of music, life, and culture in their
 hometown.`,
         c3: `Two friends take a walk in the park and chat about health, diet, and work.`,
@@ -28,10 +27,11 @@ hometown.`,
         xml:'Download XML:',
         on:'View online:',
         more:"More conversations coming soon",
-        check:"Check back for updates"
+        check:"Check back for updates",
+        brand: "Corpus of Conversational Uyghur"
     },
     uy: {
-        homepagetitle: `Uyghurche söhbet toplimi`,
+        homepagetitle: `Uyghurche Söhbet Toplimi`,
         paragraph1: `Essalammu eleykum, tor bétimizge xush keldingiz! Hazirqi alimlargha qarighanda, kündilik söhbet insan tilining eng asasliq wezipisi bolup, kündilik söhbettiki gepni küzitish we tetqiq
 qilish herqandaq tilning alahidilikini chüshinish üchün bir achquch dur. Bu toplamdiki awazliq
 xatiriler 21-esirning deslepki yillirida di&#39;asporadiki uyghurlar kündilik söhbetlerde ishlitidighan
@@ -50,14 +50,14 @@ qisqartmilarning chüshendürülüshi <span><a id="here-link" class="regularLink
         paragraph4: `Her bir söhbetning transkripsiyisi hem <.xml> hem <eaf> format süpitide chüshürüwélishqa
 bolidu. Bu <.eaf> formattiki höjjetler munasiwetlik awazliq höjjiti bilen <span><a class="regularLink" href="https://archive.mpi.nl/tla/elan/download">&lt;ELAN&gt;
 </a></span> namliq programmisi arqiliq achqili bolidu. Barliq awazliq höjjetler we transkripsiyilirini <.zip> halitide
-bille chüshürüwélish üchün, <span><a id="click-link" class="regularLink" href="zip/transcripts.zip"> bu yerni </a></span>chéking.`,
-        contact: `<span>Contact: 
+bille chüshürüwélish üchün, <span><a id="click-link" class="regularLink" href="zip/transcripts.zip">bu yerni</a></span> chéking.`,
+        contact: `<span>Alaqe qilish üchün: 
 </span> 
-<br id="email"> Alaqe qilish üchün - <a class="footerLink" href="mfiddler@ucsb.edu">mfiddler@ucsb.edu</a> 
-<br id="web"> Torbet layihilesh - hebibullah abdukérim 
+<br id="email"> Élxet adrési - <a class="footerLink" href="mfiddler@ucsb.edu">mfiddler@ucsb.edu</a> 
+<br id="web"> Torbet layihilesh - Hebibullah Abdukérim 
 
-<p id="footer-description">*Bu projékt kaliforniye uniwérsitét santa barbara (UCSB)-diki doktur aspiranti maykil fidlér
-(Michael Fiddler) bilen <a class="footerLink" href="https://uyghursfoundation.org/en/">uyghur projékt fondi teripidin</a> qilinghan.</p> 
+<p id="footer-description">*Bu projékt Kaliforniye Uniwérsitét Santa Barbara (UCSB)-diki doktur aspiranti Maykil Fidlér
+(Michael Fiddler) bilen <a class="footerLink" href="https://uyghursfoundation.org/en/">Uyghur Projékt Fondi</a> teripidin qilinghan.</p> 
 <hr class="visible-xs text-center"> `,
         c1: `Zum arqiliq, uyghur tili ders ötidighan ikki xizmetdash xizmet, a&#39;ile we bashqa xil
 témilarda paranglishidu.`,
@@ -67,16 +67,17 @@ xil ötken waqitlardiki xatiriliri heqqide paranglishidu.`,
 paranglishidu.`,
         c4: `Mekteptin qaytqandin kéyin, bir bala anisi bilen öyde paranglishidu.`,
         direction: 'ltr',
-        h1:'söhbet-1',
-        h2:'söhbet-2',
-        h3:'söhbet-3',
-        h4:'söhbet-4',
-        audio:'awaz höjjiti:',
-        trans:'transkripsiye höjjiti (ELAN):',
-        xml:'transkripsiye höjjiti (XML):',
-        on:'torda échish:',
+        h1:'1-söhbet',
+        h2:'2-söhbet',
+        h3:'3-söhbet',
+        h4:'4-söhbet',
+        audio:'Awaz höjjiti:',
+        trans:'Transkripsiye höjjiti (ELAN):',
+        xml:'Transkripsiye höjjiti (XML):',
+        on:'Torda échish:',
         more:"Yéqinda téximu köp söhbetler qoshulidu.",
-        check:"Yéngilanghan uchurlar üchün qaytakörüp turung."
+        check:"Yéngilanghan uchurlar üchün qayta körüp turung.",
+        brand: "Uyghurche Söhbet Toplimi"
     },
     ar: {
         homepagetitle: `ئۇيغۇرچە سۆھبەت توپلىمى`,
@@ -97,9 +98,9 @@ paranglishidu.`,
         paragraph4: `ھەر بىر سۆھبەتنىڭ ترانسكرىپسىيىسى ھەم &lt;.xml&gt; ھەم &lt;.eaf&gt; فورمات سۈپىتىدە چۈشۈرۈۋېلىشقا بولىدۇ. بۇ &lt;.eaf&gt;
 فورماتتىكى ھۆججەتلەر مۇناسىۋەتلىك ئاۋازلىق ھۆججىتى بىلەن <span><a class="regularLink" href="https://archive.mpi.nl/tla/elan/download">&lt;ELAN&gt;</a></span> ناملىق پروگراممىسى ئارقىلىق ئاچقىلى بولىدۇ.
 بارلىق ئاۋازلىق ھۆججەتلەر ۋە ترانسكرىپسىيىلىرىنى &lt;.zip&gt; ھالىتىدە بىللە چۈشۈرۈۋېلىش ئۈچۈن، <span><a id="click-link" class="regularLink" href="zip/transcripts.zip">بۇ يەرنى</a></span> چېكىڭ.`,
-        contact: `<span>Contact: 
+        contact: `<span>ئالاقە قىلىش ئۈچۈن: 
 </span> 
-<br id="email">ئالاقە قىلىش ئۈچۈن- <a class="footerLink" href="mfiddler@ucsb.edu">mfiddler@ucsb.edu</a> 
+<br id="email">ئېلخەت ئادرېسى - <a class="footerLink" href="mfiddler@ucsb.edu">mfiddler@ucsb.edu</a> 
 <br id="web"> توربەت لايىھىلەش: ھەبىبۇللاھ ئابدۇكېرىم
 
 <p id="footer-description">بۇ پروجېكت كالىفورنىيە ئۇنىۋېرسىتېت سانتا باربارا (UCSB)-دىكى دوكتۇر ئاسپىرانتى مايكىل فىدلېر (Michael Fiddler) بىلەنن.<a class="footerLink" href="https://uyghursfoundation.org/en/">ئۇيغۇر پروجېكت فوندى</a> تەرىپىدىن قىلىنغا.</p> 
@@ -119,7 +120,8 @@ paranglishidu.`,
         xml:'(XML) ترانسكرىپسىيە ھۆججىتى',
         on:'توردا ئېچىش',
         more:"يېقىندا تېخىمۇ كۆپ سۆھبەتلەر قوشۇلىدۇ.",
-        check:"يېڭىلانغان ئۇچۇرلار ئۈچۈن قايتا كۆرۈپ تۇرۇڭ."
+        check:"يېڭىلانغان ئۇچۇرلار ئۈچۈن قايتا كۆرۈپ تۇرۇڭ.",
+        brand: `ئۇيغۇرچە سۆھبەت توپلىمى`
     },
     cy: {
         homepagetitle: `уйғурчә сөһбәт топлими`,
@@ -146,9 +148,9 @@ paranglishidu.`,
 һөҗҗити билән <span><a class="regularLink" href="https://archive.mpi.nl/tla/elan/download">&lt;ELAN&gt;</a> намлиқ программиси арқилиқ ачқили болиду. барлиқ авазлиқ һөҗҗәтләр
 вә транскрипсийилирини &lt;.zip&gt; һалитидә биллә чүшүрүвелиш үчүн, 
 <span><a id="click-link" class="regularLink" href="zip/transcripts.zip">бу йәрни</a></span> чекиң.`,
-        contact: `<span>Contact: 
+        contact: `<span>алақә қилиш үчүн: 
 </span> 
-<br id="email">алақә қилиш үчүн - <a class="footerLink" href="mfiddler@ucsb.edu">mfiddler@ucsb.edu</a> 
+<br id="email">елхәт адреси - <a class="footerLink" href="mfiddler@ucsb.edu">mfiddler@ucsb.edu</a> 
 <br id="web">торбәт лайиһиләш: һәбибуллаһ абдукерим
 
 <p id="footer-description">*бу проҗект калифорнийә университет санта барбара (UCSB)-дики доктур аспиранти
@@ -171,7 +173,8 @@ paranglishidu.`,
         xml:'транскрипсийә һөҗҗити (XML):',
         on:'аваз һөҗҗити:',
         more:"йеқинда техиму көп сөһбәтләр қошулиду.",
-        check:"йеңиланған учурлар үчүн қайта көрүп туруң."
+        check:"йеңиланған учурлар үчүн қайта көрүп туруң.",
+        brand: `уйғурчә сөһбәт топлими`
     }
 };
 
@@ -250,6 +253,7 @@ function switchLanguage(language, element) {
     document.getElementById('h-4').innerHTML = translations[language].h4;
     document.getElementById('more').innerHTML = translations[language].more;
     document.getElementById('check').innerHTML = translations[language].check;
+    document.getElementById('brand').innerHTML = translations[language].brand;
     const textElements0 = document.querySelectorAll('.d-audio');
     for (i=0; i<textElements0.length;i++) {
         textElements0[i].innerHTML = translations[language].audio;
